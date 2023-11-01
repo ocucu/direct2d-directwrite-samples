@@ -1,0 +1,55 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by TextFormat.rc
+//
+#define IDR_MAINFRAME                   128
+#define IDS_SAMPLE_NAME_FONT            200
+#define IDS_SAMPLE_TEXT_FONT            201
+#define IDS_SAMPLE_NAME_ALIGNMENT       202
+#define IDS_SAMPLE_TEXT_ALIGNMENT       203
+#define IDS_SAMPLE_NAME_WORD_WRAPPING   204
+#define IDS_SAMPLE_TEXT_WORD_WRAPPING   205
+#define IDS_SAMPLE_NAME_TRIMMING        206
+#define IDS_SAMPLE_TEXT_TRIMMING        207
+#define IDS_SAMPLE_NAME_DIRECTION       208
+#define IDS_SAMPLE_TEXT_DIRECTION       209
+#define IDS_SAMPLE_NAME_LINE_SPACING    210
+#define IDS_SAMPLE_TEXT_LINE_SPACING    211
+#define IDS_SAMPLE_NAME_TAB_STOP        212
+#define IDS_SAMPLE_TEXT_TAB_STOP        213
+#define IDD_FONT_PANE                   501
+#define IDD_ALIGNMENT_PANE              502
+#define IDD_WORD_WRAPPING_PANE          503
+#define IDD_TRIMMING_PANE               504
+#define IDD_DIRECTION_PANE              506
+#define IDD_LINE_SPACING_PANE           508
+#define IDD_TAB_STOP_PANE               510
+#define IDC_COMBO_FONT_FAMILY           1105
+#define IDC_SLIDER_FONT_SIZE            1106
+#define IDC_COMBO_FONT_WEIGHT           1107
+#define IDC_COMBO_FONT_STYLE            1108
+#define IDC_COMBO_FONT_STRETCH          1109
+#define IDC_COMBO_TEXT_ALIGNMENT        1110
+#define IDC_COMBO_PARAGRAPH_ALIGNMENT   1111
+#define IDC_COMBO_WORD_WRAPPING         1112
+#define IDC_COMBO_TRIMMING_GRANULARITY  1113
+#define IDC_COMBO_TRIMMING_DELIMITER    1114
+#define IDC_EDIT_TRIMMING_DELMITER_COUNT 1115
+#define IDC_SPIN_TRIMMING_DELIMITER_COUNT 1116
+#define IDC_COMBO_FLOW_DIRECTION        1117
+#define IDC_COMBO_READING_DIRECTION     1118
+#define IDC_COMBO_LINE_SPACING_METHOD   1119
+#define IDC_SLIDER_LINE_SPACING_FACTOR  1120
+#define IDC_SLIDER_TAB_STOP_DISTANCE    1121
+#define IDC_COMBO_TAB_STOP_METHOD       1122
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        512
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1123
+#define _APS_NEXT_SYMED_VALUE           318
+#endif
+#endif

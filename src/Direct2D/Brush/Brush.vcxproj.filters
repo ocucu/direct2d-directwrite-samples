@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{f3a02e21-b393-4c72-a05b-af5b9f3e0633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{838445df-3bd5-4f3b-8180-6e82589c43ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{dc46af9b-fae6-4704-9da2-af8146e920fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parameters">
+      <UniqueIdentifier>{ddc55200-e59f-46a1-a60f-3eed22ed5c52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Panes">
+      <UniqueIdentifier>{9a2d3aaa-0ceb-4891-a67b-e8272a59209a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushApp.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushDocument.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushFrame.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushView.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Panes.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidColorBrushPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushDemo.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapBrushParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="SolidColorBrushParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapBrushPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearGradientBrushParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearGradientBrushPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="GradientBrushParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="BrushPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="GradientBrushPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="RadialGradientBrushParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="RadialGradientBrushPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="BrushApp.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="BrushDocument.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="BrushFrame.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="BrushView.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="SolidColorBrushPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="BrushDemo.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapBrushPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearGradientBrushPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="GradientBrushParameters.cpp">
+      <Filter>Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearGradientBrushParameters.cpp">
+      <Filter>Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapBrushParameters.cpp">
+      <Filter>Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="BrushPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="GradientBrushPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="RadialGradientBrushParameters.cpp">
+      <Filter>Parameters</Filter>
+    </ClCompile>
+    <ClCompile Include="RadialGradientBrushPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Brush.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BrushDocument.inl">
+      <Filter>Framework</Filter>
+    </None>
+    <None Include="BitmapBrushParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="SolidColorBrushParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="LinearGradientBrushParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="GradientBrushParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="RadialGradientBrushParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Color-Martix-128.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\cat-512.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\MFC-icon-256.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gray-matrix-96.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

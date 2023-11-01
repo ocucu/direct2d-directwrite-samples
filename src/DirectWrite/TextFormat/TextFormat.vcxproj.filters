@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{f3a02e21-b393-4c72-a05b-af5b9f3e0633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{3ba01fe3-6f12-4f8b-a7c7-cedab18fc92e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Panes">
+      <UniqueIdentifier>{cf56262d-cf3e-4490-9fa9-d4cb4252996b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parameters">
+      <UniqueIdentifier>{b369c235-bc7c-4d0d-b44c-40925da6f101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{38586713-0abb-4812-ba41-b3f01142e066}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFormatApp.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFormatDocument.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFormatFrame.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFormatView.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="AlignmentPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="FontPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSpacingPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="WordWrappingPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="TrimmingPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="TabStopPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="WordWrappingParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="TrimmingParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="AlignmentParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="FontParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="LineSpacingParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="TabStopParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="Panes.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoTextFormat.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFormatApp.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFormatDocument.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFormatFrame.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextFormatView.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="WordWrappingPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="TrimmingPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="AlignmentPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="FontPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="LineSpacingPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="TabStopPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoTextFormat.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TextFormat.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AlignmentParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="DirectionParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="FontParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="LineSpacingParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="TabStopParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="TrimmingParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="WordWrappingParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="TextFormatDocument.inl">
+      <Filter>Framework</Filter>
+    </None>
+  </ItemGroup>
+</Project>
