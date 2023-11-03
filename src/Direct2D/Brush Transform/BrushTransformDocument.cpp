@@ -22,11 +22,6 @@ BOOL CBrushTransformDocument::CreateD2DResources(CHwndRenderTarget* pRenderTarge
     VERIFY_BOOL_RET(CreateSampleLinearGradientBrush(pRenderTarget), FALSE);
     VERIFY_BOOL_RET(CreateSampleRadialGradientBrush(pRenderTarget), FALSE);
 
-    // create additional brushes for text and lines
-    CD2DResourceFactory factory(pRenderTarget);
-    VERIFY_BOOL_RET(factory.CreateBrush(RGB(64, 0, 0), m_pTextBrush), FALSE);
-    VERIFY_BOOL_RET(factory.CreateBrush(RGB(0, 0, 128), m_pLineBrush), FALSE);
-
     return TRUE;
 }
 #pragma endregion
