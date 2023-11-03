@@ -31,5 +31,7 @@ inline BitmapId CSamplePane::GetSampleBitmapId() const
     return m_sampleBitmapId;
 }
 
-
-
+inline BrushTypeId CSamplePane::GetSampleBrushTypeId() const
+{
+    return m_sampleBrushTypeId;
+}

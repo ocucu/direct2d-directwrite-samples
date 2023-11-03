@@ -37,3 +37,15 @@ inline BitmapId CDemoDocument::GetSampleBitmapId() const
 {
     return m_sampleBitmapId;
 }
+
+inline void CDemoDocument::SetSampleBrushTypeId(BrushTypeId brushTypeId)
+{
+	m_sampleBrushTypeId = brushTypeId;
+	UpdateAllViews(NULL, 0, NULL);
+
+}
+
+inline BrushTypeId CDemoDocument::GetSampleBrushTypeId() const
+{
+	return m_sampleBrushTypeId;
+}

@@ -17,6 +17,7 @@
     public:
         CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, UINT nTextResId);
         CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, FigureId figureId);
+        CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, BrushTypeId brushTypeId);
         CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, FigureId figureId, BitmapId bitmapId);
     protected:
         // Operations
@@ -27,6 +28,7 @@
         CString GetSampleText() const;
         FigureId GetSampleFigureId() const;
         BitmapId GetSampleBitmapId() const;
+        BrushTypeId GetSampleBrushTypeId() const;
         void UpdateView(UpdateHint hint, CObject& params);
 
         // Override
@@ -63,6 +65,7 @@
         CString m_strSampleText;
         FigureId m_sampleFigureId{ static_cast<FigureId>(0) }; // FigureId::unknown
         BitmapId m_sampleBitmapId{ static_cast<BitmapId>(0) }; // BitmapId::unknown
+        BrushTypeId m_sampleBrushTypeId{ static_cast<BrushTypeId>(0) }; // BrushTypeId::unknown
     };
 
 #include "SamplePane.inl"

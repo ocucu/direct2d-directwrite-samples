@@ -26,6 +26,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Render Target Transform", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo Framework", "src\DemoFramework\DemoFramework.vcxproj", "{356130A9-96E6-47C4-9299-740E1D6FD7B3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Brush Transform", "src\Direct2D\Brush Transform\BrushTransform.vcxproj", "{D8579566-8893-4F86-AE05-5E380E461CFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -66,6 +68,14 @@ Global
 		{356130A9-96E6-47C4-9299-740E1D6FD7B3}.Release|x64.Build.0 = Release|x64
 		{356130A9-96E6-47C4-9299-740E1D6FD7B3}.Release|x86.ActiveCfg = Release|Win32
 		{356130A9-96E6-47C4-9299-740E1D6FD7B3}.Release|x86.Build.0 = Release|Win32
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Debug|x64.ActiveCfg = Debug|x64
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Debug|x64.Build.0 = Debug|x64
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Debug|x86.ActiveCfg = Debug|Win32
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Debug|x86.Build.0 = Debug|Win32
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Release|x64.ActiveCfg = Release|x64
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Release|x64.Build.0 = Release|x64
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Release|x86.ActiveCfg = Release|Win32
+		{D8579566-8893-4F86-AE05-5E380E461CFA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +85,7 @@ Global
 		{7CCAD636-9BD2-4FD2-ADFB-D75B6D51140E} = {7941F670-22ED-42E8-97A0-687C52BE4F7F}
 		{C3926A26-AE15-4773-A0AF-D095E7697CFF} = {7941F670-22ED-42E8-97A0-687C52BE4F7F}
 		{356130A9-96E6-47C4-9299-740E1D6FD7B3} = {12EBFA00-BE0C-4F18-BE91-64510DED540B}
+		{D8579566-8893-4F86-AE05-5E380E461CFA} = {7941F670-22ED-42E8-97A0-687C52BE4F7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FED2BA20-8A93-4305-9CA9-98DFE83417ED}

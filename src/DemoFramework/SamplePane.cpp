@@ -34,6 +34,15 @@ CSamplePane::CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, Fig
     m_lpszBarTemplateName = MAKEINTRESOURCE(nDlgResId);
 }
 
+CSamplePane::CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, BrushTypeId brushTypeId)
+    : m_nDlgResId(nDlgResId),
+    m_sampleId(sampleId),
+    m_sampleBrushTypeId(brushTypeId)
+{
+    ATLVERIFY(m_strSampleName.LoadString(nNameResId));
+    m_lpszBarTemplateName = MAKEINTRESOURCE(nDlgResId);
+}
+
 CSamplePane::CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, FigureId figureId, BitmapId bitmapId)
     : m_nDlgResId(nDlgResId),
     m_sampleId(sampleId),

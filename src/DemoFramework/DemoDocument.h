@@ -15,7 +15,9 @@ public:
     FigureId GetSampleFigureId() const;
     void SetSampleBitmapId(BitmapId bitmapId);
     BitmapId GetSampleBitmapId() const;
-    void ShowSampleTextDialog();
+	void SetSampleBrushTypeId(BrushTypeId brushTypeId);
+	BrushTypeId GetSampleBrushTypeId() const;
+	void ShowSampleTextDialog();
 protected:
     // Overridden
     virtual BOOL OnNewDocument() override;
@@ -25,6 +27,7 @@ private:
     CString m_strSampleText;
     FigureId m_sampleFigureId{ static_cast<FigureId>(0) }; // FigureId::unknown 
     BitmapId m_sampleBitmapId{ static_cast<BitmapId>(0) }; // BitmapId::unknown 
+	BrushTypeId m_sampleBrushTypeId{ static_cast<BrushTypeId>(0) }; // BrushTypeId::unknown 
 };
 
 #include "DemoDocument.inl"

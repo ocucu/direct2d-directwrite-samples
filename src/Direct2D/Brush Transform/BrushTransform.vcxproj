@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D8579566-8893-4F86-AE05-5E380E461CFA}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <RootNamespace>BrushTransform</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>Brush Transform</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)\int_files\$(ProjectName)\</IntDir>
+    <TargetName>BrushTransform</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)\int_files\$(ProjectName)\</IntDir>
+    <TargetName>BrushTransform</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)\int_files\$(ProjectName)\</IntDir>
+    <TargetName>BrushTransform</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)\int_files\$(ProjectName)\</IntDir>
+    <TargetName>BrushTransform</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)DemoFramework\;$(SolutionDir)src\DemoFramework\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)lib_files\</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb_files\$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>D2d1.lib;dxguid.lib;DemoFramework.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(SolutionDir)DemoFramework\;$(SolutionDir)src\DemoFramework\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)lib_files\</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb_files\$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>D2d1.lib;dxguid.lib;DemoFramework.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)DemoFramework\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)lib_files\</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb_files\$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>D2d1.lib;dxguid.lib;DemoFramework.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration />
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)DemoFramework\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)lib_files\</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb_files\$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalDependencies>D2d1.lib;dxguid.lib;DemoFramework.lib</AdditionalDependencies>
+      <LinkTimeCodeGeneration />
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BrushTransformDocument.h" />
+    <ClInclude Include="RotationPane.h" />
+    <ClInclude Include="RotationParameters.h" />
+    <ClInclude Include="ScalePane.h" />
+    <ClInclude Include="ScaleParameters.h" />
+    <ClInclude Include="SkewPane.h" />
+    <ClInclude Include="SkewParmeters.h" />
+    <ClInclude Include="TranslationPane.h" />
+    <ClInclude Include="TranslationParameters.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="BrushTransformApp.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="BrushTransformDemo.h" />
+    <ClInclude Include="BrushTransformFrame.h" />
+    <ClInclude Include="BrushTransformView.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Panes.h" />
+    <ClInclude Include="Parameters.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BrushTransformDocument.cpp" />
+    <ClCompile Include="RotationPane.cpp" />
+    <ClCompile Include="ScalePane.cpp" />
+    <ClCompile Include="SkewPane.cpp" />
+    <ClCompile Include="TranslationPane.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="BrushTransformApp.cpp" />
+    <ClCompile Include="BrushTransformDemo.cpp" />
+    <ClCompile Include="BrushTransformFrame.cpp" />
+    <ClCompile Include="BrushTransformView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BrushTransform.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BrushTransformDocument.inl" />
+    <None Include="RotationParameters.inl" />
+    <None Include="ScaleParameters.inl" />
+    <None Include="SkewParmeters.inl" />
+    <None Include="TranslationParameters.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Icondrawer-Gifts-Rose.256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\image_sources.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -20,6 +20,7 @@
 enum class SampleId;                // sample/pane identifiers
 enum class FigureId;                // figure identifiers
 enum class BitmapId;                // bitmap identifiers
+enum class BrushTypeId;             // brush type identifiers
 enum class UpdateHint : LPARAM;     // view update hints
 
 // STL stuff

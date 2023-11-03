@@ -58,6 +58,7 @@ void CDemoFrame::ActivatePane(SampleId sampleId)
             pDoc->SetSampleText(spPane->GetSampleText());
             pDoc->SetSampleFigureId(spPane->GetSampleFigureId());
             pDoc->SetSampleBitmapId(spPane->GetSampleBitmapId());
+            pDoc->SetSampleBrushTypeId(spPane->GetSampleBrushTypeId());
             spPane->SetSampleParameters();
             spPane->ShowPane(TRUE, FALSE, TRUE);
             UpdateFrameTitle(spPane->GetSampleName());
