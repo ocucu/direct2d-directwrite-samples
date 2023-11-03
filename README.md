@@ -7,7 +7,6 @@
 * Direct2D – Brush Samples project
 * Direct2D – Brush Transform Samples project
 * Direct2D – Render Target Transform Samples project
-* Direct2D – Render Target Transform Samples project
 * DirectWrite – Text Format Samples project
 
 ## Additional notes
