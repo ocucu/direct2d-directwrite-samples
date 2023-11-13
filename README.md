@@ -8,6 +8,7 @@
 * Direct2D – Brush Transform Samples project
 * Direct2D – Render Target Transform Samples project
 * DirectWrite – Text Format Samples project
+* Direct2D - Photo Effects Samples projects
 
 ## Additional notes
 * You can find a short description for each demo project at [Codexpert Blog](https://codexpertro.wordpress.com/)
