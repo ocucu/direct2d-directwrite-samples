@@ -32,7 +32,7 @@ void CSepiaPane::InitPane()
 void CSepiaPane::SetSampleParameters()
 {
     m_sliderIntensity.SetPos(m_nMaxSliderPos * 3 / 4);
-    m_comboAlphaMode.SelectItem(D2D1_ALPHA_MODE_STRAIGHT);
+    m_comboAlphaMode.SelectItem(D2D1_ALPHA_MODE_PREMULTIPLIED);
     ParametersChanged();
 }
 

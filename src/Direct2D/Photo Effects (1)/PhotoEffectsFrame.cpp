@@ -30,13 +30,13 @@ BOOL CPhotoEffectsFrame::AddDockingPanes()
     auto spBrightnessPane = std::make_shared<CBrightnessPane>(IDD_BRIGHTNESS_PANE, SampleId::brightness,
         IDS_SAMPLE_NAME_BRIGHTNESS, BitmapId::pencil);
     auto spGrayscalePane = std::make_shared<CGrayscalePane>(IDD_GRAYSCALE_PANE, SampleId::grayscale,
-        IDS_SAMPLE_NAME_GRAYSCALE, BitmapId::cat);
+        IDS_SAMPLE_NAME_GRAYSCALE, BitmapId::pencil);
     auto spInvertPane = std::make_shared<CInvertPane>(IDD_INVERT_PANE, SampleId::invert,
-        IDS_SAMPLE_NAME_INVERT, BitmapId::cat);
+        IDS_SAMPLE_NAME_INVERT, BitmapId::pencil);
     auto spSepiaPane = std::make_shared<CSepiaPane>(IDD_SEPIA_PANE, SampleId::sepia,
         IDS_SAMPLE_NAME_SEPIA, BitmapId::pencil);
     auto spExposurePane = std::make_shared<CExposurePane>(IDD_EXPOSURE_PANE, SampleId::exposure,
-        IDS_SAMPLE_NAME_EXPOSURE, BitmapId::cat);
+        IDS_SAMPLE_NAME_EXPOSURE, BitmapId::pencil);
 
     VERIFY_BOOL_RET(AddPane(spContrastPane), FALSE);
     VERIFY_BOOL_RET(AddPane(spBrightnessPane), FALSE);
