@@ -27,6 +27,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo Framework", "src\DemoFramework\DemoFramework.vcxproj", "{356130A9-96E6-47C4-9299-740E1D6FD7B3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Brush Transform", "src\Direct2D\Brush Transform\BrushTransform.vcxproj", "{D8579566-8893-4F86-AE05-5E380E461CFA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{356130A9-96E6-47C4-9299-740E1D6FD7B3} = {356130A9-96E6-47C4-9299-740E1D6FD7B3}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Photo Effects (1)", "src\Direct2D\Photo Effects (1)\PhotoEffects(1).vcxproj", "{E424F776-6461-42A9-95C0-C512786CE2E2}"
 	ProjectSection(ProjectDependencies) = postProject
