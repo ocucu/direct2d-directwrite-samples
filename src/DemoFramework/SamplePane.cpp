@@ -186,12 +186,6 @@ LRESULT CSamplePane::HandleInitDialog(WPARAM wParam, LPARAM lParam)
     __super::HandleInitDialog(wParam, lParam);
 
     InitPane();
-    //auto pFrame = GetDemoFrame();
-    //ASSERT_VALID(pFrame);
-    //if (pFrame->GetActivePaneId() == GetSampleId())
-    //{
-    //    SetSampleParameters();
-    //}
     return TRUE;
 }
 
