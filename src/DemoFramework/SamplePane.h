@@ -15,6 +15,7 @@
     {
         friend class CDemoFrame;
     public:
+        CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId);
         CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, UINT nTextResId);
         CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, FigureId figureId);
         CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, BrushTypeId brushTypeId);

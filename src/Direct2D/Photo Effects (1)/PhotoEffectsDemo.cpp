@@ -130,10 +130,15 @@ void CPhotoEffectsDemo::DrawContrastDemo(CComPtr<ID2D1DeviceContext>& spDeviceCo
 
     // set the input image
     spEffect->SetInput(0, pBitmap->Get());
+
     // set "contrast" property between -1.f and 1.f (default is 0.f)
-    // note: it seems that it has no effect; just putting it on for testing. 
     FLOAT contrast = m_contrastParams.GetContrast();
     spEffect->SetValue(D2D1_CONTRAST_PROP_CONTRAST, contrast);
+
+    // set "clamp imput" property (default is FALSE)
+    // note: it seems that it has no effect; just putting it on for testing. 
+    BOOL clampImput = m_contrastParams.GetClampInput();
+    spEffect->SetValue(D2D1_CONTRAST_PROP_CLAMP_INPUT, clampImput);
 
     // draw the image
     spDeviceContext->DrawImage(spEffect);

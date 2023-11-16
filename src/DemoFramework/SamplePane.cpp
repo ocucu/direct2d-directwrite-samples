@@ -16,6 +16,14 @@
 #define IDC_BUTTON_RESET            IDABORT
 
 #pragma region Constructors
+CSamplePane::CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId)
+    : m_nDlgResId(nDlgResId),
+    m_sampleId(sampleId)
+{
+    ATLVERIFY(m_strSampleName.LoadString(nNameResId));
+    m_lpszBarTemplateName = MAKEINTRESOURCE(nDlgResId);
+}
+
 CSamplePane::CSamplePane(UINT nDlgResId, SampleId sampleId, UINT nNameResId, UINT nTextResId)
     : m_nDlgResId(nDlgResId),
     m_sampleId(sampleId)
