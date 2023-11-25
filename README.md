@@ -1,4 +1,4 @@
-# Direct2D and DirectWrite Samples
+# Direct2D and DirectWrite Samples Collection
 <p>This repository contains a collection of Visual Studio C++ demo projects using MFC framework and wrapper classes for <strong>Direct2D</strong> and <strong>DirectWrite</strong> library interfaces.</p>
 <p>Download and extract zip archive or clone the repository, then open <strong>ALL SAMPLES.sln</strong> in Visual Studio. Altrnativelly you can open one of the solutions located in 'src' folder, e.g. <strong>Brush Samples.sln</strong>, <strong>Brush Transform Samples.sln</strong> and so on.</p>
 
