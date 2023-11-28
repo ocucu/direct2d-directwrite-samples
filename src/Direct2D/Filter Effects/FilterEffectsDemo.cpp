@@ -115,15 +115,15 @@ void CFilterEffectsDemo::DrawGaussianBlurDemo(CComPtr<ID2D1DeviceContext>& spDev
 
     // set "standard deviation" property between 0.f and 20.f (default is 3.0f)
     FLOAT standardDeviation = m_gaussianBlurParams.GetStandardDeviation();
-    spEffect->SetValue(D2D1_DIRECTIONALBLUR_PROP_STANDARD_DEVIATION, standardDeviation);
+    spEffect->SetValue(D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION, standardDeviation);
 
     // set "optimization" value (default is D2D1_DIRECTIONALBLUR_OPTIMIZATION_BALANCED)
     D2D1_DIRECTIONALBLUR_OPTIMIZATION optimization = m_gaussianBlurParams.GetOptimization();
-    spEffect->SetValue(D2D1_DIRECTIONALBLUR_PROP_OPTIMIZATION, optimization);
+    spEffect->SetValue(D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION, optimization);
 
     // set "border mode" value (default is D2D1_DIRECTIONALBLUR_OPTIMIZATION_BALANCED)
     D2D1_BORDER_MODE borderMode = m_gaussianBlurParams.GetBorderMode();
-    spEffect->SetValue(D2D1_DIRECTIONALBLUR_PROP_BORDER_MODE, borderMode);
+    spEffect->SetValue(D2D1_GAUSSIANBLUR_PROP_BORDER_MODE, borderMode);
 
     // draw the image
     spDeviceContext->DrawImage(spEffect);
