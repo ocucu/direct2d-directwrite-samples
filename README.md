@@ -3,12 +3,13 @@
 <p>Download and extract zip archive or clone the repository, then open <strong>ALL SAMPLES.sln</strong> in Visual Studio. Altrnativelly you can open one of the solutions located in 'src' folder, e.g. <strong>Brush Samples.sln</strong>, <strong>Brush Transform Samples.sln</strong> and so on.</p>
 
 ## Solution contents
-* Demo Framework library
-* Direct2D – Brush Samples project
-* Direct2D – Brush Transform Samples project
-* Direct2D – Render Target Transform Samples project
-* DirectWrite – Text Format Samples project
-* Direct2D - Photo Effects Samples projects
+* Demo Framework library (Direct2D helpers and MFC-extensions to be used in all sample projects)
+* Direct2D – Brush Samples
+* Direct2D – Brush Transform Samples
+* Direct2D – Render Target Transform Samples
+* DirectWrite – Text Format Samples
+* Direct2D - Photo Effects Samples
+* Direct2D - Filter Effects
 
 ## Additional notes
 * You can find a short description for each demo project at [Codexpert Blog](https://codexpertro.wordpress.com/)
