@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{f3a02e21-b393-4c72-a05b-af5b9f3e0633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{838445df-3bd5-4f3b-8180-6e82589c43ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parameters">
+      <UniqueIdentifier>{25f08438-adb5-497c-9603-feafa1d7d033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Panes">
+      <UniqueIdentifier>{9a2d3aaa-0ceb-4891-a67b-e8272a59209a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{f38f1710-3902-4d04-a347-3dae60e8bdbd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterEffectsApp.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterEffectsDocument.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterEffectsFrame.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterEffectsView.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Panes.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterEffectsDemo.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalBlurParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianBlurParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeDetectionParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="MorphologyParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalBlurPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianBlurPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="EdgeDetectionPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="MorphologyPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterEffectsApp.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterEffectsDocument.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterEffectsFrame.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterEffectsView.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterEffectsDemo.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionalBlurPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianBlurPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="EdgeDetectionPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="MorphologyPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FilterEffects.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FilterEffectsDocument.inl">
+      <Filter>Framework</Filter>
+    </None>
+    <None Include="DirectionalBlurParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="GaussianBlurParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="EdgeDetectionParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="MorphologyParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\avocado-256x400.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
