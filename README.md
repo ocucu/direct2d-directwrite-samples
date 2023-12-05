@@ -4,11 +4,11 @@
 
 ## Solution contents
 * Demo Framework library (Direct2D helpers and MFC-extensions to be used in all sample projects)
-* Direct2D – Brush Samples
-* Direct2D – Brush Transform Samples
-* Direct2D – Render Target Transform Samples
-* DirectWrite – Text Format Samples
-* Direct2D - Photo Effects Samples
+* Direct2D – Brush
+* Direct2D – Brush Transform
+* Direct2D – Render Target Transform
+* DirectWrite – Text Format
+* Direct2D - Photo Effects
 * Direct2D - Filter Effects
 
 ## Additional notes
