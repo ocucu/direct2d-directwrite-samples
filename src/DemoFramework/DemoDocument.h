@@ -9,13 +9,13 @@ class DEMOFRAMEWORK_EXP CDemoDocument : public CDocument
 public:
     // Operations
     void UpdateView(UpdateHint hint, CObject& params);
-    void SetSampleText(const CString& strText);
+    void SetSampleText(const CString& strText, bool bUpdateView = true);
     CString GetSampleText() const;
-    void SetSampleFigureId(FigureId figureId);
+    void SetSampleFigureId(FigureId figureId, bool bUpdateView = true);
     FigureId GetSampleFigureId() const;
-    void SetSampleBitmapId(BitmapId bitmapId);
+    void SetSampleBitmapId(BitmapId bitmapId, bool bUpdateView = true);
     BitmapId GetSampleBitmapId() const;
-	void SetSampleBrushTypeId(BrushTypeId brushTypeId);
+	void SetSampleBrushTypeId(BrushTypeId brushTypeId, bool bUpdateView = true);
 	BrushTypeId GetSampleBrushTypeId() const;
 	void ShowSampleTextDialog();
 protected:

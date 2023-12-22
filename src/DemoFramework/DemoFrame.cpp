@@ -55,13 +55,14 @@ void CDemoFrame::ActivatePane(SampleId sampleId)
         {
             CDemoDocument* pDoc = dynamic_cast<CDemoDocument*>(GetActiveDocument());
             ASSERT_VALID(pDoc);
-            pDoc->SetSampleText(spPane->GetSampleText());
-            pDoc->SetSampleFigureId(spPane->GetSampleFigureId());
-            pDoc->SetSampleBitmapId(spPane->GetSampleBitmapId());
-            pDoc->SetSampleBrushTypeId(spPane->GetSampleBrushTypeId());
+            pDoc->SetSampleText(spPane->GetSampleText(), false);
+            pDoc->SetSampleFigureId(spPane->GetSampleFigureId(), false);
+            pDoc->SetSampleBitmapId(spPane->GetSampleBitmapId(), false);
+            pDoc->SetSampleBrushTypeId(spPane->GetSampleBrushTypeId(), false);
             spPane->SetSampleParameters();
             spPane->ShowPane(TRUE, FALSE, TRUE);
             UpdateFrameTitle(spPane->GetSampleName());
+            pDoc->UpdateAllViews(NULL, 0, NULL);
             break;
         }
     }
