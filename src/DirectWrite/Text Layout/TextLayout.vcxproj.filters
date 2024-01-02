@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="pch">
+      <UniqueIdentifier>{f3a02e21-b393-4c72-a05b-af5b9f3e0633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{838445df-3bd5-4f3b-8180-6e82589c43ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parameters">
+      <UniqueIdentifier>{25f08438-adb5-497c-9603-feafa1d7d033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Panes">
+      <UniqueIdentifier>{9a2d3aaa-0ceb-4891-a67b-e8272a59209a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{f38f1710-3902-4d04-a347-3dae60e8bdbd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutApp.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutDocument.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutFrame.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutView.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Panes.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutDemo.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeFormatParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeFormatPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutApp.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutDocument.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutFrame.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutView.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutDemo.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="RangeFormatPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TextLayout.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TextLayoutDocument.inl">
+      <Filter>Framework</Filter>
+    </None>
+    <None Include="RangeFormatParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+    <None Include="TextLayoutParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+  </ItemGroup>
+</Project>
