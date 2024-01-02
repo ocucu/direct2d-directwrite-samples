@@ -7,9 +7,10 @@
 * Direct2D – Brush
 * Direct2D – Brush Transform
 * Direct2D – Render Target Transform
-* DirectWrite – Text Format
 * Direct2D - Photo Effects
 * Direct2D - Filter Effects
+* DirectWrite – Text Format
+* DirectWrite – Text Layout
 
 ## Additional notes
 * You can find a short description for each demo project at [Codexpert Blog](https://codexpertro.wordpress.com/)
