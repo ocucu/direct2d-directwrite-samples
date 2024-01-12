@@ -22,6 +22,8 @@ BOOL CTextLayoutDocument::CreateD2DResources(CHwndRenderTarget* pRenderTarget)
     CD2DResourceFactory factory(pRenderTarget);
     factory.CreateBrush(RGB(0, 0, 64), m_pTextBrush);
     VERIFY_D2D_RESOURCE_RET(m_pTextBrush, FALSE);
+    factory.CreateBrush(RGB(0, 0, 0), m_pSolidColorBrush);
+    VERIFY_D2D_RESOURCE_RET(m_pSolidColorBrush, FALSE);
 
     factory.CreateBrush(RGB(64, 128, 255), m_pBackgroundBrush);
     VERIFY_D2D_RESOURCE_RET(m_pTextBrush, FALSE);

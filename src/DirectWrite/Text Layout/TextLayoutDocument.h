@@ -8,6 +8,7 @@ namespace Framework
     public:
         // Operations
         CD2DSolidColorBrush* GetTextBrush();
+        CD2DSolidColorBrush* GetSolidColorBrush();
         CD2DSolidColorBrush* GetBackgroundBrush();
     private:
         // Overridden
@@ -16,6 +17,7 @@ namespace Framework
         // Data
         // Direct2D resources
         CD2DSolidColorBrush* m_pTextBrush{ NULL };
+        CD2DSolidColorBrush* m_pSolidColorBrush{ NULL };
         CD2DSolidColorBrush* m_pBackgroundBrush{ NULL };
     };
 

@@ -30,7 +30,7 @@ void CTextLayoutPane::DoDataExchange(CDataExchange* pDX)
 void CTextLayoutPane::InitPane()
 {
     m_sliderMaxWidth.SetRange(200, 456);
-    m_sliderMaxHeight.SetRange(100, 312);
+    m_sliderMaxHeight.SetRange(100, 336);
     m_sliderStartPosition.SetRange(0, 100);
     m_sliderLength.SetRange(0, 100);
 }

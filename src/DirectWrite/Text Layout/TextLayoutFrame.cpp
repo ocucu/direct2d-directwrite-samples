@@ -12,7 +12,7 @@
 #endif
 
 #define FRAME_CX_DEFAULT    718
-#define FRAME_CY_DEFAULT    400
+#define FRAME_CY_DEFAULT    424
 
 using Framework::CTextLayoutFrame;
 using namespace Panes;

@@ -58,47 +58,64 @@ void CTextLayoutDemo::DrawRangeFormatDemo(CHwndRenderTarget* pRenderTarget, CD2D
     VERIFY_D2D_RESOURCE(pRenderTarget);
     VERIFY_D2D_RESOURCE(&textFormat);
 
+    // get text block and text range brushes from document
     auto pDoc = GetDocument();
     ASSERT_VALID(pDoc);
-
-    auto pTextBrush = pDoc->GetTextBrush();
-    VERIFY_D2D_RESOURCE(pTextBrush);
+    auto pTextBlockBrush = pDoc->GetTextBrush();
+    VERIFY_D2D_RESOURCE(pTextBlockBrush);
     CString strText = pDoc->GetSampleText();
+    auto pTextRangeBrush = pDoc->GetSolidColorBrush();
+    VERIFY_D2D_RESOURCE(pTextRangeBrush);
 
+    // create CD2DTextLayout object
     CD2DTextLayout textLayout(
         pRenderTarget,  // window render target
         strText,        // text to be drawn
-        textFormat,     // CD2DTextFormat object
+        textFormat,     // text block format
         sizeMax         // the size of layout box
     );
-
     VERIFY_D2D_RESOURCE(&textLayout);
 
     const DWRITE_TEXT_RANGE& textRange = m_rangeFormatParams.GetTextRange();
+
+    // set range font family name
     CString strFontFamily = m_rangeFormatParams.GetFontFamily();
     textLayout.SetFontFamilyName(strFontFamily, textRange);
 
+    // get IDWriteTextLayout interface
     IDWriteTextLayout* pTextLayout = textLayout.Get();
 
+    // set range font size in DIP
     FLOAT fontSize = m_rangeFormatParams.GetFontSize();
     pTextLayout->SetFontSize(fontSize, textRange);
 
+    // set range font weight
     DWRITE_FONT_WEIGHT fontWeight = m_rangeFormatParams.GetFontWeight();
     pTextLayout->SetFontWeight(fontWeight, textRange);
 
+    // set range font style
     DWRITE_FONT_STYLE fontStyle = m_rangeFormatParams.GetFontStyle();
     pTextLayout->SetFontStyle(fontStyle, textRange);
 
+    // set range font stretch
     DWRITE_FONT_STRETCH fontStretch = m_rangeFormatParams.GetFontStretch();
     pTextLayout->SetFontStretch(fontStretch, textRange);
 
+    // set range underline
     BOOL bUnderline = m_rangeFormatParams.GetUnderline();
     pTextLayout->SetUnderline(bUnderline, textRange);
 
+    // set range strikethrough
     BOOL bStrikethrough = m_rangeFormatParams.GetStrikethrough();
     pTextLayout->SetStrikethrough(bStrikethrough, textRange);
 
-    pRenderTarget->DrawTextLayout(CD2DPointF(), &textLayout, pTextBrush);
+    // set text range color
+    D2D1_COLOR_F textRangeColor = m_rangeFormatParams.GetColor();
+    pTextRangeBrush->SetColor(textRangeColor);
+    pTextLayout->SetDrawingEffect(pTextRangeBrush->Get(), textRange);
+    
+    // draw text layout
+    pRenderTarget->DrawTextLayout(CD2DPointF(), &textLayout, pTextBlockBrush);
 }
 
 void CTextLayoutDemo::FillTextLayoutBackground(CHwndRenderTarget* pRenderTarget, const CD2DSizeF& sizeMax)

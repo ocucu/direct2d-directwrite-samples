@@ -24,6 +24,8 @@ namespace Parameters
         BOOL GetUnderline() const;
         void SetStrikethrough(BOOL bValue);
         BOOL GetStrikethrough() const;
+        void SetColor(COLORREF color);
+        D2D1_COLOR_F GetColor() const;
         // Copy
         CRangeFormatParameters& operator=(const CRangeFormatParameters& params);
     private:
@@ -35,6 +37,7 @@ namespace Parameters
         DWRITE_FONT_STRETCH m_fontStretch{ DWRITE_FONT_STRETCH_NORMAL };
         BOOL m_bUnderline{ FALSE };
         BOOL m_bStrikethrough{ FALSE };
+        D2D1_COLOR_F m_color{ D2D1::ColorF::Black };
     };
 
 #include "RangeFormatParameters.inl"

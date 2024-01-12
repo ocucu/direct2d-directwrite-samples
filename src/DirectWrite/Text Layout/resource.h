@@ -16,16 +16,16 @@
 #define IDC_SLIDER_START_POSITION       1108
 #define IDC_SLIDER_LENGTH               1109
 #define IDC_CHECK_UNDERLINE             1110
-#define IDC_CHECK2                      1111
 #define IDC_CHECK_STRIKETHROUGH         1111
+#define IDC_BUTTON_COLOR                1112
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        543
+#define _APS_NEXT_RESOURCE_VALUE        544
 #define _APS_NEXT_COMMAND_VALUE         32777
-#define _APS_NEXT_CONTROL_VALUE         1112
+#define _APS_NEXT_CONTROL_VALUE         1113
 #define _APS_NEXT_SYMED_VALUE           318
 #endif
 #endif

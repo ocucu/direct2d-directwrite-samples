@@ -31,6 +31,7 @@ namespace Panes
         CExtendedComboBox m_comboFontStretch;
         CButton m_checkUnderline;
         CButton m_checkStrikethrough;
+        CMFCColorButton m_buttonColor;
         // Data
         static constexpr int m_nMinSliderPos{ 12 };
         static constexpr int m_nMaxSliderPos{ 96 };

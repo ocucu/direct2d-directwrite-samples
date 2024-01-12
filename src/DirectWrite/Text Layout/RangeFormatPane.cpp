@@ -30,6 +30,7 @@ void CRangeFormatPane::DoDataExchange(CDataExchange* pDX)
     DDX_Control(pDX, IDC_COMBO_FONT_STRETCH, m_comboFontStretch);
     DDX_Control(pDX, IDC_CHECK_UNDERLINE, m_checkUnderline);
     DDX_Control(pDX, IDC_CHECK_STRIKETHROUGH, m_checkStrikethrough);
+    DDX_Control(pDX, IDC_BUTTON_COLOR, m_buttonColor);
 }
 
 void CRangeFormatPane::InitPane()
@@ -56,6 +57,7 @@ void CRangeFormatPane::SetSampleParameters()
     m_comboFontStretch.SelectItem(DWRITE_FONT_STRETCH_NORMAL);
     m_checkUnderline.SetCheck(BST_CHECKED);
     m_checkStrikethrough.SetCheck(BST_UNCHECKED);
+    m_buttonColor.SetColor(RGB(0, 0, 255));
     ParametersChanged();
 }
 
@@ -70,6 +72,7 @@ void CRangeFormatPane::ResetParameters()
     m_comboFontStretch.SelectItem(DWRITE_FONT_STRETCH_NORMAL);
     m_checkUnderline.SetCheck(BST_UNCHECKED);
     m_checkStrikethrough.SetCheck(BST_UNCHECKED);
+    m_buttonColor.SetColor(RGB(0, 0, 0));
     ParametersChanged();
 }
 
@@ -84,6 +87,7 @@ void CRangeFormatPane::ParametersChanged()
     params.SetFontStretch(m_comboFontStretch.GetSelectedItemData());
     params.SetUnderline(m_checkUnderline.GetCheck() == BST_CHECKED);
     params.SetStrikethrough(m_checkStrikethrough.GetCheck() == BST_CHECKED);
+    params.SetColor(m_buttonColor.GetColor());
     UpdateView(UpdateHint::rangeFormatChanged, params);
 }
 #pragma endregion
