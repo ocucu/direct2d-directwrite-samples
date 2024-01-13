@@ -19,10 +19,11 @@ public:
     void OnRangeFormatChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoTextRangeFormat(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat, const CD2DSizeF& sizeMax);
+    
     // Implementation
-    void DrawRangeFormatDemo(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat, const CD2DSizeF& sizeMax);
     void FillTextLayoutBackground(CHwndRenderTarget* pRenderTarget, const CD2DSizeF& sizeMax);
- 
     Framework::CTextLayoutDocument* GetDocument();
 
     // Data

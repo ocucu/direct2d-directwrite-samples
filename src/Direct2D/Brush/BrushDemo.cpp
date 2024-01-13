@@ -22,16 +22,16 @@ void CBrushDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     switch (sampleId)
     {
     case SampleId::solidColorBrush:
-        DrawSolidColorBrushDemo(pRenderTarget);
+        DemoSolidColorBrush(pRenderTarget);
         break;
     case SampleId::bitmapBrush:
-        DrawBitmapBrushDemo(pRenderTarget);
+        DemoBitmapBrush(pRenderTarget);
         break;
     case SampleId::linearGradientBrush:
-        DrawLinearGradientBrushDemo(pRenderTarget);
+        DemoLinearGradientBrush(pRenderTarget);
         break;
     case SampleId::radialGradientBrush:
-        DrawRadialGradientBrushDemo(pRenderTarget);
+        DemoRadialGradientBrush(pRenderTarget);
         break;
     default:
         ATLTRACE("Unhandled SampleId value");
@@ -75,8 +75,8 @@ void CBrushDemo::OnRadialGradiontBrushChanged(CObject* pHint)
 }
 #pragma endregion
 
-#pragma region Implementation
-void CBrushDemo::DrawSolidColorBrushDemo(CHwndRenderTarget* pRenderTarget)
+#pragma region Demo functions
+void CBrushDemo::DemoSolidColorBrush(CHwndRenderTarget* pRenderTarget)
 {
   
     D2D1_COLOR_F color = m_solidColorBrushParams.GetColor();
@@ -94,7 +94,7 @@ void CBrushDemo::DrawSolidColorBrushDemo(CHwndRenderTarget* pRenderTarget)
     }
 }
 
-void CBrushDemo::DrawBitmapBrushDemo(CHwndRenderTarget* pRenderTarget)
+void CBrushDemo::DemoBitmapBrush(CHwndRenderTarget* pRenderTarget)
 {
     CD2DBitmap* pBitmap{ NULL };
     auto pDoc = GetDocument();
@@ -133,7 +133,7 @@ void CBrushDemo::DrawBitmapBrushDemo(CHwndRenderTarget* pRenderTarget)
     }
 }
 
-void CBrushDemo::DrawLinearGradientBrushDemo(CHwndRenderTarget* pRenderTarget)
+void CBrushDemo::DemoLinearGradientBrush(CHwndRenderTarget* pRenderTarget)
 {
     constexpr UINT gradientStopsCount = 3;
     D2D1_GRADIENT_STOP gradientStops[gradientStopsCount];
@@ -183,7 +183,7 @@ void CBrushDemo::DrawLinearGradientBrushDemo(CHwndRenderTarget* pRenderTarget)
     }
 }
 
-void CBrushDemo::DrawRadialGradientBrushDemo(CHwndRenderTarget* pRenderTarget)
+void CBrushDemo::DemoRadialGradientBrush(CHwndRenderTarget* pRenderTarget)
 {
     constexpr UINT gradientStopsCount = 3;
     D2D1_GRADIENT_STOP gradientStops[gradientStopsCount];
@@ -236,7 +236,9 @@ void CBrushDemo::DrawRadialGradientBrushDemo(CHwndRenderTarget* pRenderTarget)
         DrawInfoText(pRenderTarget, strInfoText);
     }
 }
+#pragma endregion
 
+#pragma region Implementation
 void CBrushDemo::FillDemo(CHwndRenderTarget* pRenderTarget, CD2DBrush& brush)
 {
     FigureId figureId = GetDemoDocument()->GetSampleFigureId();

@@ -22,16 +22,17 @@ public:
     void OnExposureChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoContrast(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoBrightness(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoGrayscale(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoInvert(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoSepia(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoExposure(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+ 
     // Implementation
     void SelectBitmap(CD2DBitmap*& pBitmap);
     void DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap);
-    void DrawContrastDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawBrightnessDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawGrayscaleDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawInvertDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawSepiaDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawExposureDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
- 
     Framework::CPhotoEffectsDocument* GetDocument();
 
     // Data

@@ -21,16 +21,16 @@ void CRenderTargetTransformDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     switch (sampleId)
     {
     case SampleId::translation:
-        DrawTranslationSample(pRenderTarget);
+        DemoTranslation(pRenderTarget);
         break;
     case SampleId::rotation:
-        DrawRotationSample(pRenderTarget);
+        DemoRotation(pRenderTarget);
         break;
     case SampleId::scale:
-        DrawScaleSample(pRenderTarget);
+        DemoScale(pRenderTarget);
         break;
     case SampleId::skew:
-        DrawSkewSample(pRenderTarget);
+        DemoSkew(pRenderTarget);
         break;
     default:
         ATLTRACE("Unhandled SampleId value");
@@ -79,8 +79,8 @@ void CRenderTargetTransformDemo::OnSkewChanged(CObject* pHint)
 }
 #pragma endregion
 
-#pragma region Implementation
-void CRenderTargetTransformDemo::DrawTranslationSample(CHwndRenderTarget* pRenderTarget)
+#pragma region Demo functions
+void CRenderTargetTransformDemo::DemoTranslation(CHwndRenderTarget* pRenderTarget)
 {
     CD2DSizeF size = m_translationParams.GetSize();
     D2D1_MATRIX_3X2_F translation = D2D1::Matrix3x2F::Translation(size);
@@ -92,7 +92,7 @@ void CRenderTargetTransformDemo::DrawTranslationSample(CHwndRenderTarget* pRende
     DrawDemoFigure(pRenderTarget, 0.2f);
 }
 
-void CRenderTargetTransformDemo::DrawRotationSample(CHwndRenderTarget* pRenderTarget)
+void CRenderTargetTransformDemo::DemoRotation(CHwndRenderTarget* pRenderTarget)
 {
     FLOAT angle = m_rotationParams.GetAngle();
     CD2DPointF center = m_rotationParams.GetCenter();
@@ -111,7 +111,7 @@ void CRenderTargetTransformDemo::DrawRotationSample(CHwndRenderTarget* pRenderTa
     DrawCenter(pRenderTarget, center, pDoc->GetRotateCenterBitmap());
 }
 
-void CRenderTargetTransformDemo::DrawScaleSample(CHwndRenderTarget* pRenderTarget)
+void CRenderTargetTransformDemo::DemoScale(CHwndRenderTarget* pRenderTarget)
 {
     CD2DSizeF size = m_scaleParams.GetSize();
     CD2DPointF center = m_scaleParams.GetCenter();
@@ -130,7 +130,7 @@ void CRenderTargetTransformDemo::DrawScaleSample(CHwndRenderTarget* pRenderTarge
     DrawCenter(pRenderTarget, center, pDoc->GetScaleCenterBitmap());
 }
 
-void CRenderTargetTransformDemo::DrawSkewSample(CHwndRenderTarget* pRenderTarget)
+void CRenderTargetTransformDemo::DemoSkew(CHwndRenderTarget* pRenderTarget)
 {
     FLOAT angleX = m_skewParams.GetAngleX();
     FLOAT angleY = m_skewParams.GetAngleY();
@@ -149,7 +149,9 @@ void CRenderTargetTransformDemo::DrawSkewSample(CHwndRenderTarget* pRenderTarget
     ASSERT_VALID(pDoc);
     DrawCenter(pRenderTarget, center, pDoc->GetSkewCenterBitmap());
 }
+#pragma endregion
 
+#pragma region Implementation
 void CRenderTargetTransformDemo::DrawDemoFigure(CHwndRenderTarget* pRenderTarget, FLOAT opacity /*= 1.f*/)
 {
     FigureId figureId = GetDemoDocument()->GetSampleFigureId();

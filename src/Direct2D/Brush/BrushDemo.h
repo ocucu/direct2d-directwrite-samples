@@ -22,11 +22,13 @@ public:
     void OnRadialGradiontBrushChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoSolidColorBrush(CHwndRenderTarget* pRenderTarget);
+    void DemoBitmapBrush(CHwndRenderTarget* pRenderTarget);
+    void DemoLinearGradientBrush(CHwndRenderTarget* pRenderTarget);
+    void DemoRadialGradientBrush(CHwndRenderTarget* pRenderTarget);
+
     // Implementation
-    void DrawSolidColorBrushDemo(CHwndRenderTarget* pRenderTarget);
-    void DrawBitmapBrushDemo(CHwndRenderTarget* pRenderTarget);
-    void DrawLinearGradientBrushDemo(CHwndRenderTarget* pRenderTarget);
-    void DrawRadialGradientBrushDemo(CHwndRenderTarget* pRenderTarget);
     void FillDemo(CHwndRenderTarget* pRenderTarget, CD2DBrush& brush);
     void FillDemoRenderTarget(CHwndRenderTarget* pRenderTarget, CD2DBrush& brush);
     void FillDemoRectangle(CHwndRenderTarget* pRenderTarget, CD2DBrush& brush);

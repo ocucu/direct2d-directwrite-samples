@@ -22,12 +22,13 @@ public:
     void OnSkewChanged(CObject* pHint);
 
 private:
-    // Implementation
-    void DrawTranslationSample(CHwndRenderTarget* pRenderTarget);
-    void DrawRotationSample(CHwndRenderTarget* pRenderTarget);
-    void DrawScaleSample(CHwndRenderTarget* pRenderTarget);
-    void DrawSkewSample(CHwndRenderTarget* pRenderTarget);
+    // Demo functions
+    void DemoTranslation(CHwndRenderTarget* pRenderTarget);
+    void DemoRotation(CHwndRenderTarget* pRenderTarget);
+    void DemoScale(CHwndRenderTarget* pRenderTarget);
+    void DemoSkew(CHwndRenderTarget* pRenderTarget);
 
+    // Implementation
     void DrawDemoFigure(CHwndRenderTarget* pRenderTarget, FLOAT opacity = 1.f);
     void DrawDemoRectangle(CHwndRenderTarget* pRenderTarget, FLOAT opacity);
     void DrawDemoArrow(CHwndRenderTarget* pRenderTarget, FLOAT opacity);

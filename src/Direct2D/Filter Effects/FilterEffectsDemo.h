@@ -22,14 +22,15 @@ public:
     void OnMorphologyChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoGaussianBlur(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoDirectionalBlur(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoEdgeDetection(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoMorphology(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+
     // Implementation
     void SelectBitmap(CD2DBitmap*& pBitmap);
     void DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap);
-    void DrawGaussianBlurDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawDirectionalBlurDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawEdgeDetectDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawMorphologyDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
- 
     Framework::CFilterEffectsDocument* GetDocument();
 
     // Data

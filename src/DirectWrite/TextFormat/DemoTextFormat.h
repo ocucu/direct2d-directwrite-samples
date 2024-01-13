@@ -25,22 +25,19 @@ public:
     void OnIncrementalTabStopChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoTextAndParagraphAlignment(IDWriteTextFormat* pTextFormat);
+    void DemoWordWrapping(IDWriteTextFormat* pTextFormat);
+    void DemoTrimming(IDWriteTextFormat* pTextFormat);
+    void DemoFlowAndReadingDirection(IDWriteTextFormat* pTextFormat);
+    void DemoLineSpacing(IDWriteTextFormat* pTextFormat);
+    void DemoIncrementalTabStop(IDWriteTextFormat* pTextFormat);
+
     // Implementation
     void SetTextFormat(CD2DTextFormat& textFormat);
-
-    // Text format sample methods
-    void SetTextAndParagraphAlignment(IDWriteTextFormat* pTextFormat);
-    void SetWordWrapping(IDWriteTextFormat* pTextFormat);
-    void SetTrimming(IDWriteTextFormat* pTextFormat);
-    void SetFlowAndReadingDirection(IDWriteTextFormat* pTextFormat);
-    void SetLineSpacing(IDWriteTextFormat* pTextFormat);
-    void SetIncrementalTabStop(IDWriteTextFormat* pTextFormat);
-
-    // Helper methods
     void FillTextBoxBackground(CHwndRenderTarget* pRenderTarget, CD2DRectF& rect);
     void CalculateTextBoxRectangle(CHwndRenderTarget* pRenderTarget, CD2DRectF& rect);
     void DrawTabStopLines(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat, CD2DBrush* pBrush, CD2DRectF& rect);
-
     Framework::CTextFormatDocument* GetDocument();
 
     // Data

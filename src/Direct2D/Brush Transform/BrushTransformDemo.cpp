@@ -31,16 +31,16 @@ void CBrushTransformDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     switch (sampleId)
     {
     case SampleId::translation:
-        ApplyTranslationTransform(pBrush);
+        DemoTranslationTransform(pBrush);
         break;
     case SampleId::rotation:
-        ApplyRotationTransform(pBrush);
+        DemoRotationTransform(pBrush);
         break;
     case SampleId::scale:
-        ApplyScaleTransform(pBrush);
+        DemoScaleTransform(pBrush);
         break;
     case SampleId::skew:
-        ApplySkewTransform(pBrush);
+        DemoSkewTransform(pBrush);
         break;
     default:
         ATLTRACE("Unhandled SampleId");
@@ -85,6 +85,40 @@ void CBrushTransformDemo::OnSkewChanged(CObject* pHint)
 }
 #pragma endregion
 
+#pragma region Demo functions
+void CBrushTransformDemo::DemoTranslationTransform(CD2DBrush*& pBrush)
+{
+    CD2DSizeF size = m_translationParams.GetSize();
+    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Translation(size);
+    pBrush->SetTransform(&matrix);
+}
+
+void CBrushTransformDemo::DemoRotationTransform(CD2DBrush*& pBrush)
+{
+    FLOAT angle = m_rotationParams.GetAngle();
+    CD2DPointF center = m_rotationParams.GetCenter();
+    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Rotation(angle, center);
+    pBrush->SetTransform(&matrix);
+}
+
+void CBrushTransformDemo::DemoScaleTransform(CD2DBrush*& pBrush)
+{
+    CD2DSizeF size = m_scaleParams.GetSize();
+    CD2DPointF center = m_scaleParams.GetCenter();
+    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Scale(size, center);
+    pBrush->SetTransform(&matrix);
+}
+
+void CBrushTransformDemo::DemoSkewTransform(CD2DBrush*& pBrush)
+{
+    FLOAT angleX = m_skewParams.GetAngleX();
+    FLOAT angleY = m_skewParams.GetAngleY();
+    CD2DPointF center = m_skewParams.GetCenter();
+    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Skew(angleX, angleY, center);
+    pBrush->SetTransform(&matrix);
+}
+#pragma endregion
+
 #pragma region Implementation
 void CBrushTransformDemo::SelectBrush(CD2DBrush*& pBrush)
 {
@@ -106,38 +140,6 @@ void CBrushTransformDemo::SelectBrush(CD2DBrush*& pBrush)
         ATLTRACE("Unhandled BrushTypeId");
         break;
     }
-}
-
-void CBrushTransformDemo::ApplyTranslationTransform(CD2DBrush*& pBrush)
-{
-    CD2DSizeF size = m_translationParams.GetSize();
-    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Translation(size);
-    pBrush->SetTransform(&matrix);
-}
-
-void CBrushTransformDemo::ApplyRotationTransform(CD2DBrush*& pBrush)
-{
-    FLOAT angle = m_rotationParams.GetAngle();
-    CD2DPointF center = m_rotationParams.GetCenter();
-    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Rotation(angle, center);
-    pBrush->SetTransform(&matrix);
-}
-
-void CBrushTransformDemo::ApplyScaleTransform(CD2DBrush*& pBrush)
-{
-    CD2DSizeF size = m_scaleParams.GetSize();
-    CD2DPointF center = m_scaleParams.GetCenter();
-    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Scale(size, center);
-    pBrush->SetTransform(&matrix);
-}
-
-void CBrushTransformDemo::ApplySkewTransform(CD2DBrush*& pBrush)
-{
-    FLOAT angleX = m_skewParams.GetAngleX();
-    FLOAT angleY = m_skewParams.GetAngleY();
-    CD2DPointF center = m_skewParams.GetCenter();
-    D2D1_MATRIX_3X2_F matrix = D2D1::Matrix3x2F::Skew(angleX, angleY, center);
-    pBrush->SetTransform(&matrix);
 }
 
 CBrushTransformDocument* CBrushTransformDemo::GetDocument()

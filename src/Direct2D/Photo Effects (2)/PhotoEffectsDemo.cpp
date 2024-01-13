@@ -35,19 +35,19 @@ void CPhotoEffectsDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     switch (sampleId)
     {
     case SampleId::sharpen:
-        DrawSharpenDemo(spDeviceContext, pBitmap);
+        DemoSharpen(spDeviceContext, pBitmap);
         break;
     case SampleId::straighten:
-        DrawStraightenDemo(spDeviceContext, pBitmap);
+        DemoStraighten(spDeviceContext, pBitmap);
         break;
     case SampleId::vignette:
-        DrawVignetteDemo(spDeviceContext, pBitmap);
+        DemoVignette(spDeviceContext, pBitmap);
         break;
     case SampleId::highlightsAndShadows:
-        DrawHighlightsAndShadowsDemo(spDeviceContext, pBitmap);
+        DemoHighlightsAndShadows(spDeviceContext, pBitmap);
         break;
     case SampleId::temperatureAndTint:
-        DrawTemperatureAndTintDemo(spDeviceContext, pBitmap);
+        DemoTemperatureAndTint(spDeviceContext, pBitmap);
         break;
     default:
         ATLTRACE("Unhandled SampleId");
@@ -98,22 +98,8 @@ void CPhotoEffectsDemo::OnTemperatureAndTintChanged(CObject* pHint)
 }
 #pragma endregion
 
-#pragma region Implementation
-void CPhotoEffectsDemo::SelectBitmap(CD2DBitmap*& pBitmap)
-{
-    CPhotoEffectsDocument* pDoc = GetDocument();
-    ASSERT_VALID(pDoc);
-    pBitmap = pDoc->GetBitmap();
-}
-
-void CPhotoEffectsDemo::DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap)
-{
-    CD2DSizeF size = pBitmap->GetSize();
-    CD2DRectF rect{ 0.f, 0.f, size.width, size.height };
-    pRenderTarget->DrawBitmap(pBitmap, rect);
-}
-
-void CPhotoEffectsDemo::DrawSharpenDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+#pragma region Demo functions
+void CPhotoEffectsDemo::DemoSharpen(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create sharpen effect
     CComPtr<ID2D1Effect> spEffect;
@@ -134,7 +120,7 @@ void CPhotoEffectsDemo::DrawSharpenDemo(CComPtr<ID2D1DeviceContext>& spDeviceCon
     spDeviceContext->DrawImage(spEffect);
 }
 
-void CPhotoEffectsDemo::DrawStraightenDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CPhotoEffectsDemo::DemoStraighten(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create straighten effect
     CComPtr<ID2D1Effect> spEffect;
@@ -159,7 +145,7 @@ void CPhotoEffectsDemo::DrawStraightenDemo(CComPtr<ID2D1DeviceContext>& spDevice
     spDeviceContext->DrawImage(spEffect);
 }
 
-void CPhotoEffectsDemo::DrawVignetteDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CPhotoEffectsDemo::DemoVignette(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create vignette effect
     CComPtr<ID2D1Effect> spEffect;
@@ -184,7 +170,7 @@ void CPhotoEffectsDemo::DrawVignetteDemo(CComPtr<ID2D1DeviceContext>& spDeviceCo
     spDeviceContext->DrawImage(spEffect);
 }
 
-void CPhotoEffectsDemo::DrawHighlightsAndShadowsDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CPhotoEffectsDemo::DemoHighlightsAndShadows(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create highlights and shadows effect
     CComPtr<ID2D1Effect> spEffect;
@@ -218,7 +204,7 @@ void CPhotoEffectsDemo::DrawHighlightsAndShadowsDemo(CComPtr<ID2D1DeviceContext>
 
 }
 
-void CPhotoEffectsDemo::DrawTemperatureAndTintDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CPhotoEffectsDemo::DemoTemperatureAndTint(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create temperature and tint effect
     CComPtr<ID2D1Effect> spEffect;
@@ -237,6 +223,22 @@ void CPhotoEffectsDemo::DrawTemperatureAndTintDemo(CComPtr<ID2D1DeviceContext>& 
 
     // draw the image
     spDeviceContext->DrawImage(spEffect);
+}
+#pragma endregion
+
+#pragma region Implementation
+void CPhotoEffectsDemo::SelectBitmap(CD2DBitmap*& pBitmap)
+{
+    CPhotoEffectsDocument* pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+    pBitmap = pDoc->GetBitmap();
+}
+
+void CPhotoEffectsDemo::DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap)
+{
+    CD2DSizeF size = pBitmap->GetSize();
+    CD2DRectF rect{ 0.f, 0.f, size.width, size.height };
+    pRenderTarget->DrawBitmap(pBitmap, rect);
 }
 
 CPhotoEffectsDocument* CPhotoEffectsDemo::GetDocument()

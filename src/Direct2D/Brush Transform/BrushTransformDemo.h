@@ -22,12 +22,14 @@ public:
     void OnSkewChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoTranslationTransform(CD2DBrush*& pBrush);
+    void DemoRotationTransform(CD2DBrush*& pBrush);
+    void DemoScaleTransform(CD2DBrush*& pBrush);
+    void DemoSkewTransform(CD2DBrush*& pBrush);
+
     // Implementation
     void SelectBrush(CD2DBrush*& pBrush);
-    void ApplyTranslationTransform(CD2DBrush*& pBrush);
-    void ApplyRotationTransform(CD2DBrush*& pBrush);
-    void ApplyScaleTransform(CD2DBrush*& pBrush);
-    void ApplySkewTransform(CD2DBrush*& pBrush);
     Framework::CBrushTransformDocument* GetDocument();
 
     // Data

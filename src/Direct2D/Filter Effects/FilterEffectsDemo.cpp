@@ -37,16 +37,16 @@ void CFilterEffectsDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     switch (sampleId)
     {
     case SampleId::gaussianBlur:
-        DrawGaussianBlurDemo(spDeviceContext, pBitmap);
+        DemoGaussianBlur(spDeviceContext, pBitmap);
         break;
     case SampleId::directionalBlur:
-        DrawDirectionalBlurDemo(spDeviceContext, pBitmap);
+        DemoDirectionalBlur(spDeviceContext, pBitmap);
         break;
     case SampleId::edgeDetection:
-        DrawEdgeDetectDemo(spDeviceContext, pBitmap);
+        DemoEdgeDetection(spDeviceContext, pBitmap);
         break;
     case SampleId::morphology:
-        DrawMorphologyDemo(spDeviceContext, pBitmap);
+        DemoMorphology(spDeviceContext, pBitmap);
         break;
     default:
         ATLTRACE("Unhandled SampleId");
@@ -89,22 +89,8 @@ void CFilterEffectsDemo::OnMorphologyChanged(CObject* pHint)
 }
 #pragma endregion
 
-#pragma region Implementation
-void CFilterEffectsDemo::SelectBitmap(CD2DBitmap*& pBitmap)
-{
-    CFilterEffectsDocument* pDoc = GetDocument();
-    ASSERT_VALID(pDoc);
-    pBitmap = pDoc->GetBitmap();
-}
-
-void CFilterEffectsDemo::DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap)
-{
-    CD2DSizeF size = pBitmap->GetSize();
-    CD2DRectF rect{ 0.f, 0.f, size.width, size.height };
-    pRenderTarget->DrawBitmap(pBitmap, rect);
-}
-
-void CFilterEffectsDemo::DrawGaussianBlurDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+#pragma region Demo functions
+void CFilterEffectsDemo::DemoGaussianBlur(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create Gaussian Blur effect
     CComPtr<ID2D1Effect> spEffect;
@@ -129,7 +115,7 @@ void CFilterEffectsDemo::DrawGaussianBlurDemo(CComPtr<ID2D1DeviceContext>& spDev
     spDeviceContext->DrawImage(spEffect);
 }
 
-void CFilterEffectsDemo::DrawDirectionalBlurDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CFilterEffectsDemo::DemoDirectionalBlur(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create Directional Blur effect
     CComPtr<ID2D1Effect> spEffect;
@@ -158,7 +144,7 @@ void CFilterEffectsDemo::DrawDirectionalBlurDemo(CComPtr<ID2D1DeviceContext>& sp
     spDeviceContext->DrawImage(spEffect);
 }
 
-void CFilterEffectsDemo::DrawEdgeDetectDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CFilterEffectsDemo::DemoEdgeDetection(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create  Edge Detection effect
     CComPtr<ID2D1Effect> spEffect;
@@ -192,7 +178,7 @@ void CFilterEffectsDemo::DrawEdgeDetectDemo(CComPtr<ID2D1DeviceContext>& spDevic
     spDeviceContext->DrawImage(spEffect);
 }
 
-void CFilterEffectsDemo::DrawMorphologyDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
+void CFilterEffectsDemo::DemoMorphology(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap)
 {
     // create Morphology effect
     CComPtr<ID2D1Effect> spEffect;
@@ -215,6 +201,22 @@ void CFilterEffectsDemo::DrawMorphologyDemo(CComPtr<ID2D1DeviceContext>& spDevic
 
     // draw the image
     spDeviceContext->DrawImage(spEffect);
+}
+#pragma endregion
+
+#pragma region Implementation
+void CFilterEffectsDemo::SelectBitmap(CD2DBitmap*& pBitmap)
+{
+    CFilterEffectsDocument* pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+    pBitmap = pDoc->GetBitmap();
+}
+
+void CFilterEffectsDemo::DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap)
+{
+    CD2DSizeF size = pBitmap->GetSize();
+    CD2DRectF rect{ 0.f, 0.f, size.width, size.height };
+    pRenderTarget->DrawBitmap(pBitmap, rect);
 }
 
 CFilterEffectsDocument* CFilterEffectsDemo::GetDocument()

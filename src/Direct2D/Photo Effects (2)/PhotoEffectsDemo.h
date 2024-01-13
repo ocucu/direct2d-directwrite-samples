@@ -23,15 +23,16 @@ public:
     void OnTemperatureAndTintChanged(CObject* pHint);
 
 private:
+    // Demo functions
+    void DemoSharpen(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoStraighten(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoVignette(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoHighlightsAndShadows(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+    void DemoTemperatureAndTint(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
+ 
     // Implementation
     void SelectBitmap(CD2DBitmap*& pBitmap);
     void DrawOriginalBitmap(CHwndRenderTarget* pRenderTarget, CD2DBitmap* pBitmap);
-    void DrawSharpenDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawStraightenDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawVignetteDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawHighlightsAndShadowsDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
-    void DrawTemperatureAndTintDemo(CComPtr<ID2D1DeviceContext>& spDeviceContext, CD2DBitmap* pBitmap);
- 
     Framework::CPhotoEffectsDocument* GetDocument();
 
     // Data

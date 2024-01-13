@@ -33,7 +33,7 @@ void CTextLayoutDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     switch (sampleId)
     {
     case SampleId::rangeFormat:
-        DrawRangeFormatDemo(pRenderTarget, textFormat, sizeMax);
+        DemoTextRangeFormat(pRenderTarget, textFormat, sizeMax);
         break;
     default:
         ATLTRACE("Unhandled SampleId");
@@ -53,7 +53,7 @@ void CTextLayoutDemo::OnRangeFormatChanged(CObject* pHint)
 #pragma endregion
 
 #pragma region Implementation
-void CTextLayoutDemo::DrawRangeFormatDemo(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat, const CD2DSizeF& sizeMax)
+void CTextLayoutDemo::DemoTextRangeFormat(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat, const CD2DSizeF& sizeMax)
 {
     VERIFY_D2D_RESOURCE(pRenderTarget);
     VERIFY_D2D_RESOURCE(&textFormat);

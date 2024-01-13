@@ -126,24 +126,8 @@ void CDemoTextFormat::OnIncrementalTabStopChanged(CObject* pHint)
 }
 #pragma endregion
 
-#pragma region Implementation
-void CDemoTextFormat::SetTextFormat(CD2DTextFormat& textFormat)
-{
-    VERIFY_D2D_RESOURCE(&textFormat);
-
-    // get a pointer to IDWriteTextFormat interface
-    IDWriteTextFormat* pTextFormat = textFormat.Get();
-    VERIFY_PTR(pTextFormat);
-
-    SetTextAndParagraphAlignment(pTextFormat);
-    SetWordWrapping(pTextFormat);
-    SetTrimming(pTextFormat);
-    SetFlowAndReadingDirection(pTextFormat);
-    SetLineSpacing(pTextFormat);
-    SetIncrementalTabStop(pTextFormat);
-}
-
-void CDemoTextFormat::SetTextAndParagraphAlignment(IDWriteTextFormat* pTextFormat)
+#pragma region Demo functions
+void CDemoTextFormat::DemoTextAndParagraphAlignment(IDWriteTextFormat* pTextFormat)
 {
     DWRITE_TEXT_ALIGNMENT textAlignment = m_alignmentParams.GetTextAlignment();
     DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment = m_alignmentParams.GetParagraphAlignment();
@@ -151,13 +135,13 @@ void CDemoTextFormat::SetTextAndParagraphAlignment(IDWriteTextFormat* pTextForma
     pTextFormat->SetParagraphAlignment(paragraphAlignment);
 }
 
-void CDemoTextFormat::SetWordWrapping(IDWriteTextFormat* pTextFormat)
+void CDemoTextFormat::DemoWordWrapping(IDWriteTextFormat* pTextFormat)
 {
     DWRITE_WORD_WRAPPING wordWrapping = m_wordWrappingParams.GetWordWrapping();
     pTextFormat->SetWordWrapping(wordWrapping);
 }
 
-void CDemoTextFormat::SetTrimming(IDWriteTextFormat* pTextFormat)
+void CDemoTextFormat::DemoTrimming(IDWriteTextFormat* pTextFormat)
 {
     // get a poiter to DirectWrite factory
     IDWriteFactory* pDirectWriteFactory = AfxGetD2DState()->GetWriteFactory();
@@ -171,7 +155,7 @@ void CDemoTextFormat::SetTrimming(IDWriteTextFormat* pTextFormat)
     pTextFormat->SetTrimming(&trimming, spInlineObject);
 }
 
-void CDemoTextFormat::SetFlowAndReadingDirection(IDWriteTextFormat* pTextFormat)
+void CDemoTextFormat::DemoFlowAndReadingDirection(IDWriteTextFormat* pTextFormat)
 {
     DWRITE_FLOW_DIRECTION flowDirection = m_directionParams.GetFlowDirection();
     DWRITE_READING_DIRECTION readingDirection = m_directionParams.GetReadingDirection();
@@ -179,7 +163,7 @@ void CDemoTextFormat::SetFlowAndReadingDirection(IDWriteTextFormat* pTextFormat)
     pTextFormat->SetReadingDirection(readingDirection);
 }
 
-void CDemoTextFormat::SetLineSpacing(IDWriteTextFormat* pTextFormat)
+void CDemoTextFormat::DemoLineSpacing(IDWriteTextFormat* pTextFormat)
 {
     DWRITE_LINE_SPACING_METHOD lineSpacingMethod = m_lineSpacingParams.GetMethod();
     FLOAT baseline = m_fontParams.GetFontSize();
@@ -187,7 +171,7 @@ void CDemoTextFormat::SetLineSpacing(IDWriteTextFormat* pTextFormat)
     pTextFormat->SetLineSpacing(lineSpacingMethod, lineSpacing, baseline);
 }
 
-void CDemoTextFormat::SetIncrementalTabStop(IDWriteTextFormat* pTextFormat)
+void CDemoTextFormat::DemoIncrementalTabStop(IDWriteTextFormat* pTextFormat)
 {
     TAB_STOP_METHOD tabStopMethod = m_tabStopParams.GetTabStopMethod();
     if (TAB_STOP_METHOD_DEFAULT == tabStopMethod)
@@ -196,6 +180,24 @@ void CDemoTextFormat::SetIncrementalTabStop(IDWriteTextFormat* pTextFormat)
     // otherwise, set a fixed distance given by m_tabStopDistance value
     FLOAT distance = m_tabStopParams.GetTabStopDistance();
     pTextFormat->SetIncrementalTabStop(distance);
+}
+#pragma endregion
+
+#pragma region Implementation
+void CDemoTextFormat::SetTextFormat(CD2DTextFormat& textFormat)
+{
+    VERIFY_D2D_RESOURCE(&textFormat);
+
+    // get a pointer to IDWriteTextFormat interface
+    IDWriteTextFormat* pTextFormat = textFormat.Get();
+    VERIFY_PTR(pTextFormat);
+
+    DemoTextAndParagraphAlignment(pTextFormat);
+    DemoWordWrapping(pTextFormat);
+    DemoTrimming(pTextFormat);
+    DemoFlowAndReadingDirection(pTextFormat);
+    DemoLineSpacing(pTextFormat);
+    DemoIncrementalTabStop(pTextFormat);
 }
 
 void CDemoTextFormat::FillTextBoxBackground(CHwndRenderTarget* pRenderTarget, CD2DRectF& rect)
