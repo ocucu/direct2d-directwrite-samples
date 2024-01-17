@@ -24,6 +24,19 @@ BOOL CD2DResourceFactory::LoadD2DBitmap(UINT nResID, const CString& strResType, 
     return TRUE;
 }
 
+BOOL CD2DResourceFactory::LoadD2DBitmapBrush(UINT nResID, const CString& strResType, CD2DBitmapBrush*& pBrush,
+    D2D1_EXTEND_MODE extendModeX /*= D2D1_EXTEND_MODE_WRAP*/, 
+    D2D1_EXTEND_MODE extendModeY /*= D2D1_EXTEND_MODE_WRAP*/)
+{
+    delete pBrush;
+    pBrush = NULL;
+    D2D1_BITMAP_BRUSH_PROPERTIES props = D2D1::BitmapBrushProperties(extendModeX, extendModeY);
+    pBrush = new CD2DBitmapBrush(m_pRenderTarget, nResID, strResType, CD2DSizeU(), &props);
+    pBrush->Create(m_pRenderTarget);
+    VERIFY_D2D_RESOURCE_RET(pBrush, FALSE);
+    return TRUE;
+}
+
 BOOL CD2DResourceFactory::CreateBrush(COLORREF color, CD2DSolidColorBrush*& pBrush, int nAlpha /*= 255*/)
 {
     delete pBrush;

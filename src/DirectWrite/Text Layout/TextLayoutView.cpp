@@ -42,6 +42,9 @@ void CTextLayoutView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
     case UpdateHint::rangeFormatChanged:
         m_spDemo->OnRangeFormatChanged(pHint);
         break;
+    case UpdateHint::drawingEffectsChanged:
+        m_spDemo->OnDrawingEffectsChanged(pHint);
+        break;
     default:
         ATLTRACE("Unhandled update hint value");
         break;

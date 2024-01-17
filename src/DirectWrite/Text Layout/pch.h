@@ -17,6 +17,7 @@
 enum class SampleId
 {
     rangeFormat = 1,
+    drawingEffects,
 };
 
 // view updat hints
@@ -24,6 +25,15 @@ enum class UpdateHint : LPARAM
 {
     demoDocumentChanged = 0,
     rangeFormatChanged,
+    drawingEffectsChanged,
+};
+
+enum class BrushTypeId
+{
+    unknown = 0,
+    solid_color,
+    gradient,
+    bitmap,
 };
 
 #endif //PCH_H

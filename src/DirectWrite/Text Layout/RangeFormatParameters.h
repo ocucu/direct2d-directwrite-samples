@@ -1,6 +1,6 @@
 // File: RangeFormatParameters.h - CRangeFormatParameters class definition
 // Author: Ovidiu Cucu - https://codexpertro.wordpress.com/
-// Purpose: encapsulates the font parameters 
+// Purpose: encapsulates the font and text range format parameters 
 
 #pragma once
 #include "TextLayoutParameters.h"
@@ -10,6 +10,7 @@ namespace Parameters
     class CRangeFormatParameters final : public CTextLayoutParameters
     {
     public:
+        // Data access
         void SetFontFamily(const CString& strValue);
         CString GetFontFamily() const;
         void SetFontSize(int nValue);
@@ -24,8 +25,6 @@ namespace Parameters
         BOOL GetUnderline() const;
         void SetStrikethrough(BOOL bValue);
         BOOL GetStrikethrough() const;
-        void SetColor(COLORREF color);
-        D2D1_COLOR_F GetColor() const;
         // Copy
         CRangeFormatParameters& operator=(const CRangeFormatParameters& params);
     private:
@@ -37,7 +36,7 @@ namespace Parameters
         DWRITE_FONT_STRETCH m_fontStretch{ DWRITE_FONT_STRETCH_NORMAL };
         BOOL m_bUnderline{ FALSE };
         BOOL m_bStrikethrough{ FALSE };
-        D2D1_COLOR_F m_color{ D2D1::ColorF::Black };
+        
     };
 
 #include "RangeFormatParameters.inl"

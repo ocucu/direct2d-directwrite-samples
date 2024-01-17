@@ -72,16 +72,6 @@ inline BOOL CRangeFormatParameters::GetStrikethrough() const
     return m_bStrikethrough;
 }
 
-inline void CRangeFormatParameters::SetColor(COLORREF color)
-{
-    m_color = CRenderTarget::COLORREF_TO_D2DCOLOR(color);
-}
-
-inline D2D1_COLOR_F CRangeFormatParameters::GetColor() const
-{
-    return m_color;
-}
-
 inline CRangeFormatParameters& CRangeFormatParameters::operator=(const CRangeFormatParameters& params)
 {
     if (this != &params)
@@ -97,7 +87,6 @@ inline CRangeFormatParameters& CRangeFormatParameters::operator=(const CRangeFor
         m_fontStretch = params.m_fontStretch;
         m_bUnderline = params.m_bUnderline;
         m_bStrikethrough = params.m_bStrikethrough;
-        m_color = params.m_color;
     }
     return *this;
 }

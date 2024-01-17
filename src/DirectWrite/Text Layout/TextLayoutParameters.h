@@ -16,8 +16,6 @@ namespace Parameters
         // Data
         DWRITE_TEXT_RANGE m_textRange{ 0, 0 };
         CD2DSizeF m_sizeMax{ 456.f, 380.f };
-        //FLOAT m_maxWidth{ 456.f };
-        //FLOAT m_maxHeight{ 380.f };
     };
 
 #include "TextLayoutParameters.inl"

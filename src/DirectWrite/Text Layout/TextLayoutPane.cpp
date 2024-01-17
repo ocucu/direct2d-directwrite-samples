@@ -1,4 +1,4 @@
-// File: GradientBrushPane.cpp - CGradientBrushPane class implementation
+// File: TextLayoutPane.cpp - CTextLayoutPane class implementation
 // Author: Ovidiu Cucu - https://codexpertro.wordpress.com/
 
 #include "pch.h"
@@ -12,8 +12,8 @@
 using Panes::CTextLayoutPane;
 using Parameters::CTextLayoutParameters;
 
-CTextLayoutPane::CTextLayoutPane(UINT nDlgId, SampleId sampleId, UINT nNameResId, UINT nTextResId)
-    : CSamplePane(nDlgId, sampleId, nNameResId, nTextResId)
+CTextLayoutPane::CTextLayoutPane(UINT nDlgId, SampleId sampleId, UINT nNameResId, UINT nTextResId, BrushTypeId brushTypeId)
+    : CSamplePane(nDlgId, sampleId, nNameResId, nTextResId, brushTypeId)
 {
 }
 
@@ -30,7 +30,7 @@ void CTextLayoutPane::DoDataExchange(CDataExchange* pDX)
 void CTextLayoutPane::InitPane()
 {
     m_sliderMaxWidth.SetRange(200, 456);
-    m_sliderMaxHeight.SetRange(100, 336);
+    m_sliderMaxHeight.SetRange(100, 396);
     m_sliderStartPosition.SetRange(0, 100);
     m_sliderLength.SetRange(0, 100);
 }

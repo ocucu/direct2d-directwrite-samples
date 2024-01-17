@@ -67,6 +67,12 @@
     <ClInclude Include="TextLayoutParameters.h">
       <Filter>Parameters</Filter>
     </ClInclude>
+    <ClInclude Include="DrawingEffectsParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawingEffectsPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -93,6 +99,9 @@
     <ClCompile Include="TextLayoutPane.cpp">
       <Filter>Panes</Filter>
     </ClCompile>
+    <ClCompile Include="DrawingEffectsPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TextLayout.rc">
@@ -109,5 +118,13 @@
     <None Include="TextLayoutParameters.inl">
       <Filter>Parameters</Filter>
     </None>
+    <None Include="DrawingEffectsParameters.inl">
+      <Filter>Parameters</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Pine Lumber.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

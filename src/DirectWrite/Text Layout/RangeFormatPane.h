@@ -1,17 +1,18 @@
 // File: RangeFormatPane.h - CRangeFormatPane class definition
 // Author: Ovidiu Cucu - https://codexpertro.wordpress.com/
-// Purpose: Allows user to change the font parameters (family name, weight, style and stretch)
+// Purpose: Allows user to change the text range format parameters 
+//          such as font family name, weight, style and stretch, underline and strikethrough     
 
 #pragma once
 #include "TextLayoutPane.h"
 
 namespace Panes
 {
-    class CRangeFormatPane final : public CTextLayoutPane
+    class CRangeFormatPane : public CTextLayoutPane
     {
     public:
-        CRangeFormatPane(UINT nDlgId, SampleId sampleId, UINT nNameResId, UINT nTextResId);
-    private:
+        CRangeFormatPane(UINT nDlgId, SampleId sampleId, UINT nNameResId, UINT nTextResId, BrushTypeId brushTypeId);
+    protected:
         // Overridden
         virtual void DoDataExchange(CDataExchange* pDX) override;
         virtual void InitPane() override;
@@ -31,10 +32,9 @@ namespace Panes
         CExtendedComboBox m_comboFontStretch;
         CButton m_checkUnderline;
         CButton m_checkStrikethrough;
-        CMFCColorButton m_buttonColor;
         // Data
         static constexpr int m_nMinSliderPos{ 12 };
-        static constexpr int m_nMaxSliderPos{ 96 };
+        static constexpr int m_nMaxSliderPos{ 116 };
         static constexpr int m_nDefSliderPos{ 24 };
     };
 } // namespace Panes

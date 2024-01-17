@@ -17,16 +17,20 @@ public:
 
     // Operations
     void OnRangeFormatChanged(CObject* pHint);
+    void OnDrawingEffectsChanged(CObject* pHint);
 
 private:
     // Demo functions
-    void DemoTextRangeFormat(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat, const CD2DSizeF& sizeMax);
+    void DemoTextRangeFormat(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
+    void DemoDrawingEffects(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
     
     // Implementation
+    void SelectSampleBrush(CD2DBrush*& pBrush);
     void FillTextLayoutBackground(CHwndRenderTarget* pRenderTarget, const CD2DSizeF& sizeMax);
     Framework::CTextLayoutDocument* GetDocument();
 
     // Data
     Parameters::CRangeFormatParameters m_rangeFormatParams;
+    Parameters::CDrawingEffectsParameters m_drawingEffectsParams;
 };
 

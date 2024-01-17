@@ -12,7 +12,7 @@
 #endif
 
 #define FRAME_CX_DEFAULT    718
-#define FRAME_CY_DEFAULT    424
+#define FRAME_CY_DEFAULT    484
 
 using Framework::CTextLayoutFrame;
 using namespace Panes;
@@ -20,12 +20,22 @@ using namespace Panes;
 IMPLEMENT_DYNCREATE(CTextLayoutFrame, CDemoFrame)
 
 #pragma region Overridden
+BOOL CTextLayoutFrame::LoadCustomMenu()
+{
+    return m_menuCustom.LoadMenu(IDR_MENU_CUSTOM);
+}
+
 BOOL CTextLayoutFrame::AddDockingPanes()
 {
-    auto spRangeFormatPane = std::make_shared<CRangeFormatPane>(IDD_RANGE_FORMAT_PANE, SampleId::rangeFormat,
-        IDS_SAMPLE_NAME_RANGE_FORMAT, IDS_SAMPLE_TEXT_RANGE_FORMAT);
+    auto spRangeFormatPane = std::make_shared<CRangeFormatPane>(IDD_RANGE_FORMAT_PANE, 
+        SampleId::rangeFormat,
+        IDS_SAMPLE_NAME_RANGE_FORMAT, IDS_SAMPLE_TEXT_RANGE_FORMAT, BrushTypeId::unknown);
+    auto spDrawingEffectsPane = std::make_shared<CDrawingEffectsPane>(IDD_DRAWING_EFFECTS_PANE, 
+        SampleId::drawingEffects,
+        IDS_SAMPLE_NAME_DRAWING_EFFECTS, IDS_SAMPLE_TEXT_DRAWING_EFFECTS, BrushTypeId::gradient);
 
     VERIFY_BOOL_RET(AddPane(spRangeFormatPane), FALSE);
+    VERIFY_BOOL_RET(AddPane(spDrawingEffectsPane), FALSE);
 
     return TRUE;
 }

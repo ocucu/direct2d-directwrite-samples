@@ -226,6 +226,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DrawingEffectsPane.h" />
+    <ClInclude Include="DrawingEffectsParameters.h" />
     <ClInclude Include="TextLayoutPane.h" />
     <ClInclude Include="TextLayoutDocument.h" />
     <ClInclude Include="framework.h" />
@@ -243,6 +245,7 @@
     <ClInclude Include="Parameters.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DrawingEffectsPane.cpp" />
     <ClCompile Include="TextLayoutPane.cpp" />
     <ClCompile Include="TextLayoutDocument.cpp" />
     <ClCompile Include="pch.cpp">
@@ -261,9 +264,13 @@
     <ResourceCompile Include="TextLayout.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DrawingEffectsParameters.inl" />
     <None Include="TextLayoutDocument.inl" />
     <None Include="RangeFormatParameters.inl" />
     <None Include="TextLayoutParameters.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Pine Lumber.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

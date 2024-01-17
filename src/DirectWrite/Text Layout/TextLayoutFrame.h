@@ -10,6 +10,7 @@ namespace Framework
         DECLARE_DYNCREATE(CTextLayoutFrame)
     private:
         // Overridden
+        virtual BOOL LoadCustomMenu() override;
         virtual BOOL AddDockingPanes() override;
         virtual BOOL PreCreateWindow(CREATESTRUCT& cs) override;
     };

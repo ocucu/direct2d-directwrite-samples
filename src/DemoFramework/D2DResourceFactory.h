@@ -10,6 +10,8 @@ public:
     CD2DResourceFactory(CRenderTarget* pRenderTarget);
     // Operations
     BOOL LoadD2DBitmap(UINT nResID, const CString& strResType, CD2DBitmap*& pBitmap);
+    BOOL LoadD2DBitmapBrush(UINT nResID, const CString& strResType, CD2DBitmapBrush*& pBrush,
+        D2D1_EXTEND_MODE extendModeX = D2D1_EXTEND_MODE_WRAP, D2D1_EXTEND_MODE extendModeY = D2D1_EXTEND_MODE_WRAP);
     BOOL CreateBrush(COLORREF color, CD2DSolidColorBrush*& pBrush, int nAlpha = 255);
     BOOL CreateBrush(const CD2DPointF& startPoint, const CD2DPointF& endPoint,
         COLORREF startColor, COLORREF endColor, CD2DLinearGradientBrush*& pBrush);

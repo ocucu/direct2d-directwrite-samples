@@ -6,7 +6,7 @@ namespace Panes
     class CTextLayoutPane : public CSamplePane
     {
     protected:
-        CTextLayoutPane(UINT nDlgId, SampleId sampleId, UINT nNameResId, UINT nTextResId);
+        CTextLayoutPane(UINT nDlgId, SampleId sampleId, UINT nNameResId, UINT nTextResId, BrushTypeId brushTypeId);
         // Overridden
         virtual void DoDataExchange(CDataExchange* pDX) override;
         virtual void InitPane() override;
