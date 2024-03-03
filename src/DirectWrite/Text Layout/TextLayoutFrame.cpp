@@ -33,9 +33,13 @@ BOOL CTextLayoutFrame::AddDockingPanes()
     auto spDrawingEffectsPane = std::make_shared<CDrawingEffectsPane>(IDD_DRAWING_EFFECTS_PANE, 
         SampleId::drawingEffects,
         IDS_SAMPLE_NAME_DRAWING_EFFECTS, IDS_SAMPLE_TEXT_DRAWING_EFFECTS, BrushTypeId::gradient);
+    auto spInlineImagesPane = std::make_shared<CInlineImagesPane>(IDD_INLINE_IMAGE_PANE,
+        SampleId::inlineImages,
+        IDS_SAMPLE_NAME_INLINE_IMAGES, IDS_SAMPLE_TEXT_INLINE_IMAGES);
 
     VERIFY_BOOL_RET(AddPane(spRangeFormatPane), FALSE);
     VERIFY_BOOL_RET(AddPane(spDrawingEffectsPane), FALSE);
+    VERIFY_BOOL_RET(AddPane(spInlineImagesPane), FALSE);
 
     return TRUE;
 }

@@ -7,10 +7,16 @@
 #define IDS_SAMPLE_TEXT_RANGE_FORMAT    202
 #define IDS_SAMPLE_NAME_DRAWING_EFFECTS 203
 #define IDS_SAMPLE_TEXT_DRAWING_EFFECTS 204
+#define IDS_SAMPLE_NAME_INLINE_IMAGES   205
+#define IDS_SAMPLE_TEXT_INLINE_IMAGES   206
 #define IDD_RANGE_FORMAT_PANE           502
 #define IDB_PNG_PINE_LUMBER             544
 #define IDD_DRAWING_EFFECTS_PANE        545
 #define IDR_MENU_CUSTOM                 546
+#define IDD_INLINE_IMAGE_PANE           547
+#define IDB_PNG_DOG                     549
+#define IDB_PNG_RINGS                   550
+#define IDB_PNG_ROSE                    551
 #define IDC_COMBO_FONT_FAMILY           1101
 #define IDC_SLIDER_FONT_SIZE            1102
 #define IDC_COMBO_FONT_WEIGHT           1103
@@ -31,7 +37,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        547
+#define _APS_NEXT_RESOURCE_VALUE        552
 #define _APS_NEXT_COMMAND_VALUE         32780
 #define _APS_NEXT_CONTROL_VALUE         1113
 #define _APS_NEXT_SYMED_VALUE           318

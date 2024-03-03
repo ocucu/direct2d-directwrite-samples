@@ -228,6 +228,9 @@
   <ItemGroup>
     <ClInclude Include="DrawingEffectsPane.h" />
     <ClInclude Include="DrawingEffectsParameters.h" />
+    <ClInclude Include="InlineImage.h" />
+    <ClInclude Include="InlineImagesPane.h" />
+    <ClInclude Include="InlineImagesParameters.h" />
     <ClInclude Include="TextLayoutPane.h" />
     <ClInclude Include="TextLayoutDocument.h" />
     <ClInclude Include="framework.h" />
@@ -246,6 +249,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DrawingEffectsPane.cpp" />
+    <ClCompile Include="InlineImage.cpp" />
+    <ClCompile Include="InlineImagesPane.cpp" />
     <ClCompile Include="TextLayoutPane.cpp" />
     <ClCompile Include="TextLayoutDocument.cpp" />
     <ClCompile Include="pch.cpp">
@@ -265,11 +270,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DrawingEffectsParameters.inl" />
+    <None Include="InlineImage.inl" />
     <None Include="TextLayoutDocument.inl" />
     <None Include="RangeFormatParameters.inl" />
     <None Include="TextLayoutParameters.inl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\Icondrawer-Gifts-Dog.64.png" />
+    <Image Include="res\Icondrawer-Gifts-Rings.64.png" />
+    <Image Include="res\Icondrawer-Gifts-Rose.64.png" />
     <Image Include="res\Pine Lumber.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

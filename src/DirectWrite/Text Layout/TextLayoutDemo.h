@@ -18,11 +18,13 @@ public:
     // Operations
     void OnRangeFormatChanged(CObject* pHint);
     void OnDrawingEffectsChanged(CObject* pHint);
+    void OnInlineImageChanged(CObject* pHint);
 
 private:
     // Demo functions
     void DemoTextRangeFormat(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
     void DemoDrawingEffects(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
+    void DemoInlineImages(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
     
     // Implementation
     void SelectSampleBrush(CD2DBrush*& pBrush);

@@ -1,4 +1,5 @@
 #pragma once
+#include "InlineImage.h"
 
 namespace Framework
 {
@@ -7,11 +8,14 @@ namespace Framework
         DECLARE_DYNCREATE(CTextLayoutDocument);
     public:
         // Operations
-        CD2DSolidColorBrush* GetTextBrush();
-        CD2DSolidColorBrush* GetSolidColorBrush();
-        CD2DLinearGradientBrush* GetGradientBrush();
-        CD2DBitmapBrush* GetBitmapBrush();
-        CD2DSolidColorBrush* GetBackgroundBrush();
+        CD2DSolidColorBrush* GetTextBrush() const;
+        CD2DSolidColorBrush* GetSolidColorBrush() const;
+        CD2DLinearGradientBrush* GetGradientBrush() const;
+        CD2DBitmapBrush* GetBitmapBrush() const;
+        CD2DSolidColorBrush* GetBackgroundBrush() const;
+        std::shared_ptr<CInlineImage> GetRingsImage() const;
+        std::shared_ptr<CInlineImage> GetRoseImage() const;
+        std::shared_ptr<CInlineImage> GetDogImage() const;
     private:
         // Overridden
         virtual BOOL CreateD2DResources(CHwndRenderTarget* pRenderTarget) override;
@@ -28,6 +32,9 @@ namespace Framework
         CD2DLinearGradientBrush* m_pGradientBrush{ NULL };
         CD2DBitmapBrush* m_pBitmapBrush{ NULL };
         CD2DSolidColorBrush* m_pBackgroundBrush{ NULL };
+        std::shared_ptr<CInlineImage> m_spRingsImage;
+        std::shared_ptr<CInlineImage> m_spRoseImage;
+        std::shared_ptr<CInlineImage> m_spDogImage;
     };
 
 #include "TextLayoutDocument.inl"

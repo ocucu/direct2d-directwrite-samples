@@ -38,4 +38,5 @@ enum class UpdateHint : LPARAM;     // view update hints
 #include "DemoDraw.h"
 #include "ExtendedComboBox.h"
 #include "D2DResourceFactory.h"
+#include "D2DText.h"
 #include "ChangeTextDialog.h"

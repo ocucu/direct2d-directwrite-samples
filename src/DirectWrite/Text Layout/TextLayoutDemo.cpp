@@ -5,8 +5,9 @@
 
 #include "pch.h"
 #include "TextLayoutDemo.h"
+// #include "InlineImage.h"
 
-using Framework::CTextLayoutDocument;
+using namespace Framework;
 using namespace Parameters;
 
 CTextLayoutDemo::CTextLayoutDemo(CDemoView* pView)
@@ -35,6 +36,9 @@ void CTextLayoutDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     case SampleId::drawingEffects:
         DemoDrawingEffects(pRenderTarget, textFormat);
         break;
+    case SampleId::inlineImages:
+        DemoInlineImages(pRenderTarget, textFormat);
+        break;
     default:
         ATLTRACE("Unhandled SampleId");
         break;
@@ -56,6 +60,13 @@ void CTextLayoutDemo::OnDrawingEffectsChanged(CObject* pHint)
     auto pParams = dynamic_cast<CDrawingEffectsParameters*>(pHint);
     ASSERT_VALID(pParams);
     m_drawingEffectsParams = *pParams;
+    InvalidateView();
+}
+
+void CTextLayoutDemo::OnInlineImageChanged(CObject* pHint)
+{
+    auto pParams = dynamic_cast<CInlineImagesParameters*>(pHint);
+    ASSERT_VALID(pParams);
     InvalidateView();
 }
 #pragma endregion
@@ -175,6 +186,56 @@ void CTextLayoutDemo::DemoDrawingEffects(CHwndRenderTarget* pRenderTarget, CD2DT
 
     // pass the brush to IDWriteTextLayout::SetDrawingEffect
     pTextLayout->SetDrawingEffect(pTextRangeBrush->Get(), textRange);
+
+    // draw text layout
+    pRenderTarget->DrawTextLayout(CD2DPointF(), &textLayout, pTextBlockBrush);
+}
+
+void CTextLayoutDemo::DemoInlineImages(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat)
+{
+    VERIFY_D2D_RESOURCE(pRenderTarget);
+    VERIFY_D2D_RESOURCE(&textFormat);
+    auto pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+
+    // get sample text
+    CD2DText text(pDoc->GetSampleText());
+
+    // create CD2DTextLayout object
+    CD2DTextLayout textLayout(
+        pRenderTarget,           // window render target
+        text.GetString(),        // text to be drawn
+        textFormat,              // text block format
+        pRenderTarget->GetSize() // the size of layout box
+    );
+    VERIFY_D2D_RESOURCE(&textLayout);
+
+    // IDWriteTextLayout interface
+    IDWriteTextLayout* pTextLayout = textLayout.Get();
+
+    DWRITE_TEXT_RANGE textRange{ 0 };
+    // create and set inline image objects
+    auto spRingsImage = pDoc->GetRingsImage();
+    if(spRingsImage->IsValid() && (-1 != text.GetTagTextRange(L"[IMAGE:RINGS]", textRange)))
+    {
+        pTextLayout->SetInlineObject(spRingsImage->Get(), textRange);
+    }
+
+    auto spRoseImage = pDoc->GetRoseImage();
+    if (spRoseImage->IsValid() && (-1 != text.GetTagTextRange(L"[IMAGE:ROSE]", textRange)))
+    {
+        pTextLayout->SetInlineObject(spRoseImage->Get(), textRange);
+    }
+
+    auto spDogImage = pDoc->GetDogImage();
+    if (spDogImage->IsValid() && (-1 != text.GetTagTextRange(L"[IMAGE:DOG]", textRange)))
+    {
+        pTextLayout->SetInlineObject(spDogImage->Get(), textRange);
+    }
+
+    // get text block brush
+    auto pTextBlockBrush = pDoc->GetTextBrush();
+    VERIFY_D2D_RESOURCE(pTextBlockBrush);
 
     // draw text layout
     pRenderTarget->DrawTextLayout(CD2DPointF(), &textLayout, pTextBlockBrush);

@@ -239,6 +239,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AboutDemoDialog.cpp" />
+    <ClCompile Include="D2DText.cpp" />
     <ClCompile Include="DemoApp.cpp" />
     <ClCompile Include="DemoDocument.cpp" />
     <ClCompile Include="DemoFrame.cpp" />
@@ -258,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AboutDemoDialog.h" />
+    <ClInclude Include="D2DText.h" />
     <ClInclude Include="DemoApp.h" />
     <ClInclude Include="DemoDocument.h" />
     <ClInclude Include="DemoFrame.h" />

@@ -41,6 +41,21 @@ BOOL CTextLayoutDocument::CreateD2DResources(CHwndRenderTarget* pRenderTarget)
     VERIFY_D2D_RESOURCE_RET(m_pTextBrush, FALSE);
     m_pBackgroundBrush->SetOpacity(0.1f);
 
+    CD2DBitmap* pRingsBtmap{ NULL };
+    factory.LoadD2DBitmap(IDB_PNG_RINGS, L"PNG", pRingsBtmap);
+    VERIFY_D2D_RESOURCE_RET(pRingsBtmap, FALSE);
+    m_spRingsImage = std::make_shared<CInlineImage>(pRenderTarget, pRingsBtmap);
+
+    CD2DBitmap* pRoseBitmap{ NULL };
+    factory.LoadD2DBitmap(IDB_PNG_ROSE, L"PNG", pRoseBitmap);
+    VERIFY_D2D_RESOURCE_RET(pRoseBitmap, FALSE);
+    m_spRoseImage = std::make_shared<CInlineImage>(pRenderTarget, pRoseBitmap);
+
+    CD2DBitmap* pDogBitmap{ NULL };
+    factory.LoadD2DBitmap(IDB_PNG_DOG, L"PNG", pDogBitmap);
+    VERIFY_D2D_RESOURCE_RET(pDogBitmap, FALSE);
+    m_spDogImage = std::make_shared<CInlineImage>(pRenderTarget, pDogBitmap);
+
     return TRUE;
 }
 #pragma endregion
