@@ -1,0 +1,7 @@
+Files: Icondrawer-Gifts-Dog.64.png
+       Icondrawer-Gifts-Rings.64.png
+       Icondrawer-Gifts-Rose.64.png
+Source: Gifts Icons Pack
+Designer: IconDrawer (Eugen Buzuk)
+License: Free for non-commercial use.
+URL: https://www.iconarchive.com/show/gifts-icons-by-icondrawer.html

@@ -281,6 +281,9 @@
     <Image Include="res\Icondrawer-Gifts-Rose.64.png" />
     <Image Include="res\Pine Lumber.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\image_sources.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
