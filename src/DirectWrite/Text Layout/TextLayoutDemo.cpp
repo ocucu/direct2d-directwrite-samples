@@ -67,6 +67,7 @@ void CTextLayoutDemo::OnInlineImageChanged(CObject* pHint)
 {
     auto pParams = dynamic_cast<CInlineImagesParameters*>(pHint);
     ASSERT_VALID(pParams);
+    DBG_UNREFERENCED_LOCAL_VARIABLE(pParams);
     InvalidateView();
 }
 #pragma endregion
