@@ -80,6 +80,12 @@
       <Filter>Panes</Filter>
     </ClInclude>
     <ClInclude Include="InlineImage.h" />
+    <ClInclude Include="TypographyParameters.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+    <ClInclude Include="TypographyPane.h">
+      <Filter>Panes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -113,6 +119,9 @@
       <Filter>Panes</Filter>
     </ClCompile>
     <ClCompile Include="InlineImage.cpp" />
+    <ClCompile Include="TypographyPane.cpp">
+      <Filter>Panes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TextLayout.rc">

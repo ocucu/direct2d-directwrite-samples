@@ -1,11 +1,13 @@
-// File: TextLayoutDemo.cpp - CTextLayoutDemo class implementation
+// File:   TextLayoutDemo.cpp - CTextLayoutDemo class implementation
 // Author: Ovidiu Cucu 
 //         blog: https://codexpertro.wordpress.com/ 
 //         e-mail: ovidiu.cucu.mvp@gmail.com 
+// Notes:  Some may notice repeated code in DemoXyz functions and/or not enough defensive approach.   
+//         I've intentionally wrote them like that, for simplicity.
+//         Anyway, if you intend to use it in your own project, you're free to refactor those functions or just get a hint.
 
 #include "pch.h"
 #include "TextLayoutDemo.h"
-// #include "InlineImage.h"
 
 using namespace Framework;
 using namespace Parameters;
@@ -39,6 +41,9 @@ void CTextLayoutDemo::DrawDemo(CHwndRenderTarget* pRenderTarget)
     case SampleId::inlineImages:
         DemoInlineImages(pRenderTarget, textFormat);
         break;
+    case SampleId::typography:
+        DemoTypography(pRenderTarget, textFormat);
+        break;
     default:
         ATLTRACE("Unhandled SampleId");
         break;
@@ -66,6 +71,14 @@ void CTextLayoutDemo::OnDrawingEffectsChanged(CObject* pHint)
 void CTextLayoutDemo::OnInlineImageChanged(CObject* pHint)
 {
     auto pParams = dynamic_cast<CInlineImagesParameters*>(pHint);
+    ASSERT_VALID(pParams);
+    DBG_UNREFERENCED_LOCAL_VARIABLE(pParams);
+    InvalidateView();
+}
+
+void CTextLayoutDemo::OnTypographyChanged(CObject* pHint)
+{
+    auto pParams = dynamic_cast<CTypographyParameters*>(pHint);
     ASSERT_VALID(pParams);
     DBG_UNREFERENCED_LOCAL_VARIABLE(pParams);
     InvalidateView();
@@ -217,19 +230,19 @@ void CTextLayoutDemo::DemoInlineImages(CHwndRenderTarget* pRenderTarget, CD2DTex
     DWRITE_TEXT_RANGE textRange{ 0 };
     // create and set inline image objects
     auto spRingsImage = pDoc->GetRingsImage();
-    if(spRingsImage->IsValid() && (-1 != text.GetTagTextRange(L"[IMAGE:RINGS]", textRange)))
+    if(spRingsImage->IsValid() && text.GetTagTextRange(L"[IMAGE:RINGS]", textRange))
     {
         pTextLayout->SetInlineObject(spRingsImage->Get(), textRange);
     }
 
     auto spRoseImage = pDoc->GetRoseImage();
-    if (spRoseImage->IsValid() && (-1 != text.GetTagTextRange(L"[IMAGE:ROSE]", textRange)))
+    if (spRoseImage->IsValid() && text.GetTagTextRange(L"[IMAGE:ROSE]", textRange))
     {
         pTextLayout->SetInlineObject(spRoseImage->Get(), textRange);
     }
 
     auto spDogImage = pDoc->GetDogImage();
-    if (spDogImage->IsValid() && (-1 != text.GetTagTextRange(L"[IMAGE:DOG]", textRange)))
+    if (spDogImage->IsValid() && text.GetTagTextRange(L"[IMAGE:DOG]", textRange))
     {
         pTextLayout->SetInlineObject(spDogImage->Get(), textRange);
     }
@@ -240,6 +253,63 @@ void CTextLayoutDemo::DemoInlineImages(CHwndRenderTarget* pRenderTarget, CD2DTex
 
     // draw text layout
     pRenderTarget->DrawTextLayout(CD2DPointF(), &textLayout, pTextBlockBrush);
+}
+
+void CTextLayoutDemo::DemoTypography(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat)
+{
+    VERIFY_D2D_RESOURCE(pRenderTarget);
+    VERIFY_D2D_RESOURCE(&textFormat);
+    auto pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+
+    // get sample text
+    CD2DText text(pDoc->GetSampleText());
+
+    // create CD2DTextLayout object
+    CD2DTextLayout textLayout(
+        pRenderTarget,           // window render target
+        text.GetString(),        // text to be drawn
+        textFormat,              // text block format
+        pRenderTarget->GetSize() // the size of layout box
+    );
+    VERIFY_D2D_RESOURCE(&textLayout);
+
+    DWRITE_TEXT_RANGE textRange{ 0, text.GetLength() };
+    textLayout.SetFontFamilyName(L"Gabriola", textRange);
+
+    // IDWriteTextLayout interface
+    IDWriteTextLayout* pTextLayout = textLayout.Get();
+    pTextLayout->SetFontSize(36.f, textRange);
+    pTextLayout->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+
+    if (text.GetTagTextRange(L"CH3–CH2–OH", textRange))
+    {
+        HRESULT hr = SetTypographicFeature(textLayout, 
+            DWRITE_FONT_FEATURE_TAG_SCIENTIFIC_INFERIORS, textRange);
+        ASSERT(SUCCEEDED(hr));
+    }
+
+    if (text.GetTagTextRange(L"1/456", textRange))
+    {
+        HRESULT hr = SetTypographicFeature(textLayout,
+            DWRITE_FONT_FEATURE_TAG_FRACTIONS, textRange);
+        ASSERT(SUCCEEDED(hr));
+    }
+
+    if (text.GetTagTextRange(L"Fancy Typography Rendering", textRange))
+    {
+        HRESULT hr = SetTypographicFeature(textLayout,
+            DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_7, textRange);
+        ASSERT(SUCCEEDED(hr));
+    }
+    
+    // get text block brush
+    auto pTextBlockBrush = pDoc->GetTextBrush();
+    VERIFY_D2D_RESOURCE(pTextBlockBrush);
+
+    // draw text layout
+    pRenderTarget->DrawTextLayout(CD2DPointF(), &textLayout, pTextBlockBrush);
+
 }
 #pragma endregion
 
@@ -286,5 +356,33 @@ void CTextLayoutDemo::FillTextLayoutBackground(CHwndRenderTarget* pRenderTarget,
 CTextLayoutDocument* CTextLayoutDemo::GetDocument()
 {
     return dynamic_cast<CTextLayoutDocument*> (GetDemoDocument());
+}
+
+HRESULT CTextLayoutDemo::SetTypographicFeature(
+    CD2DTextLayout& textLayout,
+    DWRITE_FONT_FEATURE_TAG featureTag, 
+    DWRITE_TEXT_RANGE textRange)
+{
+    // get the global IDWriteFactory pointer
+    IDWriteFactory* pIDWriteFactory = AfxGetD2DState()->GetWriteFactory();
+
+    // create IDWriteTypography instance
+    CComPtr<IDWriteTypography> spIDWriteTypography;
+    HRESULT hr = pIDWriteFactory->CreateTypography(&spIDWriteTypography);
+    if (FAILED(hr)) 
+        return hr;
+
+    // add font feature
+    DWRITE_FONT_FEATURE fontFeature;
+    fontFeature.nameTag = featureTag;
+    fontFeature.parameter = 1;
+    hr = spIDWriteTypography->AddFontFeature(fontFeature);
+    if (FAILED(hr)) 
+        return hr;
+
+    // set the typography in a range of the text layout
+    hr = textLayout.Get()->SetTypography(spIDWriteTypography, textRange);
+    if (FAILED(hr)) 
+        return hr;
 }
 #pragma endregion

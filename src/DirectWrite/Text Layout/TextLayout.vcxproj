@@ -246,6 +246,8 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Panes.h" />
     <ClInclude Include="Parameters.h" />
+    <ClInclude Include="TypographyPane.h" />
+    <ClInclude Include="TypographyParameters.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DrawingEffectsPane.cpp" />
@@ -264,6 +266,7 @@
     <ClCompile Include="TextLayoutFrame.cpp" />
     <ClCompile Include="TextLayoutView.cpp" />
     <ClCompile Include="RangeFormatPane.cpp" />
+    <ClCompile Include="TypographyPane.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TextLayout.rc" />

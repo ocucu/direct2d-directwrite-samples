@@ -36,10 +36,14 @@ BOOL CTextLayoutFrame::AddDockingPanes()
     auto spInlineImagesPane = std::make_shared<CInlineImagesPane>(IDD_INLINE_IMAGE_PANE,
         SampleId::inlineImages,
         IDS_SAMPLE_NAME_INLINE_IMAGES, IDS_SAMPLE_TEXT_INLINE_IMAGES);
+    auto spTypographyPane = std::make_shared<CTypographyPane>(IDD_TYPOGRAPHY_PANE,
+        SampleId::typography,
+        IDS_SAMPLE_NAME_TYPOGRAPHY, IDS_SAMPLE_TEXT_TYPOGRAPHY);
 
     VERIFY_BOOL_RET(AddPane(spRangeFormatPane), FALSE);
     VERIFY_BOOL_RET(AddPane(spDrawingEffectsPane), FALSE);
     VERIFY_BOOL_RET(AddPane(spInlineImagesPane), FALSE);
+    VERIFY_BOOL_RET(AddPane(spTypographyPane), FALSE);
 
     return TRUE;
 }

@@ -6,7 +6,7 @@
 #define new DEBUG_NEW
 #endif
 
-int CD2DText::GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRange, int nStartPos /*= 0*/)
+int CD2DText::GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRange, int nStartPos)
 {
     textRange.startPosition = m_strText.Find(strTag, nStartPos);
     if (-1 == textRange.startPosition)
@@ -14,4 +14,9 @@ int CD2DText::GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRang
 
     textRange.length = strTag.GetLength();
     return textRange.startPosition + textRange.length; // first position after the tag
+}
+
+bool CD2DText::GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRange)
+{
+    return -1 != GetTagTextRange(strTag, textRange, 0);
 }

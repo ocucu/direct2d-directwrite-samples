@@ -19,6 +19,7 @@ enum class SampleId
     rangeFormat = 1,
     drawingEffects,
     inlineImages,
+    typography,
 };
 
 // view updat hints
@@ -28,6 +29,7 @@ enum class UpdateHint : LPARAM
     rangeFormatChanged,
     drawingEffectsChanged,
     inlineImagesChanged,
+    typographyChanged
 };
 
 enum class BrushTypeId

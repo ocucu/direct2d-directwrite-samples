@@ -48,6 +48,9 @@ void CTextLayoutView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
     case UpdateHint::inlineImagesChanged:
         m_spDemo->OnInlineImageChanged(pHint);
         break;
+    case UpdateHint::typographyChanged:
+        m_spDemo->OnTypographyChanged(pHint);
+        break;
     default:
         ATLTRACE("Unhandled update hint value");
         break;

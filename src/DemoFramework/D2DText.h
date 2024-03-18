@@ -11,8 +11,9 @@ public:
     ~CD2DText() = default;
     // Operations
     const CString& GetString() { return m_strText; }
-    int GetLength() { return m_strText.GetLength(); }
-    int GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRange, int nStartPos = 0);
+    UINT32 GetLength() { return static_cast<UINT32>(m_strText.GetLength()); }
+    int GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRange, int nStartPos);
+    bool GetTagTextRange(const CString& strTag, DWRITE_TEXT_RANGE& textRange);
 private:
     // Data
     CString m_strText;

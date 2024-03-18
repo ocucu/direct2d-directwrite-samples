@@ -19,17 +19,21 @@ public:
     void OnRangeFormatChanged(CObject* pHint);
     void OnDrawingEffectsChanged(CObject* pHint);
     void OnInlineImageChanged(CObject* pHint);
+    void OnTypographyChanged(CObject* pHint);
 
 private:
     // Demo functions
     void DemoTextRangeFormat(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
     void DemoDrawingEffects(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
     void DemoInlineImages(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
+    void DemoTypography(CHwndRenderTarget* pRenderTarget, CD2DTextFormat& textFormat);
     
     // Implementation
     void SelectSampleBrush(CD2DBrush*& pBrush);
     void FillTextLayoutBackground(CHwndRenderTarget* pRenderTarget, const CD2DSizeF& sizeMax);
     Framework::CTextLayoutDocument* GetDocument();
+    HRESULT SetTypographicFeature(CD2DTextLayout& textLayout, 
+        DWRITE_FONT_FEATURE_TAG featureTag, DWRITE_TEXT_RANGE textRange);
 
     // Data
     Parameters::CRangeFormatParameters m_rangeFormatParams;
