@@ -282,23 +282,24 @@ void CTextLayoutDemo::DemoTypography(CHwndRenderTarget* pRenderTarget, CD2DTextF
     pTextLayout->SetFontSize(36.f, textRange);
     pTextLayout->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
 
+    HRESULT hr = S_OK;
     if (text.GetTagTextRange(L"CH3–CH2–OH", textRange))
     {
-        HRESULT hr = SetTypographicFeature(textLayout, 
+        hr = SetTypographicFeature(textLayout, 
             DWRITE_FONT_FEATURE_TAG_SCIENTIFIC_INFERIORS, textRange);
         ASSERT(SUCCEEDED(hr));
     }
 
     if (text.GetTagTextRange(L"1/456", textRange))
     {
-        HRESULT hr = SetTypographicFeature(textLayout,
+        hr = SetTypographicFeature(textLayout,
             DWRITE_FONT_FEATURE_TAG_FRACTIONS, textRange);
         ASSERT(SUCCEEDED(hr));
     }
 
     if (text.GetTagTextRange(L"Fancy Typography Rendering", textRange))
     {
-        HRESULT hr = SetTypographicFeature(textLayout,
+        hr = SetTypographicFeature(textLayout,
             DWRITE_FONT_FEATURE_TAG_STYLISTIC_SET_7, textRange);
         ASSERT(SUCCEEDED(hr));
     }
@@ -384,5 +385,7 @@ HRESULT CTextLayoutDemo::SetTypographicFeature(
     hr = textLayout.Get()->SetTypography(spIDWriteTypography, textRange);
     if (FAILED(hr)) 
         return hr;
+
+    return S_OK;
 }
 #pragma endregion
