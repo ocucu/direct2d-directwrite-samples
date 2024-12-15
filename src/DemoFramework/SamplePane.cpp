@@ -142,33 +142,20 @@ BOOL CSamplePane::OnCommand(WPARAM wParam, LPARAM lParam)
     return CPaneDialog::OnCommand(wParam, lParam);
 }
 
-void CSamplePane::ShowPane(BOOL bShow, BOOL bDelay, BOOL bActivate)
-{
-    __super::ShowPane(bShow, bDelay, bActivate);
-}
-
-BOOL CSamplePane::FloatPane(CRect rectFloat, AFX_DOCK_METHOD dockMethod, bool bShow)
-{
-    if (rectFloat.Width() == 100)
-    {
-        int cx = m_sizeDialog.cx + m_cxLeftBorder + m_cxRightBorder - 2 * ::GetSystemMetrics(SM_CXEDGE);
-        int cy = m_sizeDialog.cy + m_cyTopBorder + m_cyBottomBorder + 2 * ::GetSystemMetrics(SM_CYEDGE);
-        rectFloat.SetRect(0, 0, cx, cy);
-        rectFloat.OffsetRect(10, 10);
-    }
-    return __super::FloatPane(rectFloat, dockMethod, bShow);
-}
-
 void  CSamplePane::OnAfterDock(CBasePane* pBar, LPCRECT lpRect, AFX_DOCK_METHOD dockMethod)
 {
     if (pBar)
     {
-        if (pBar->IsKindOf(RUNTIME_CLASS(CBaseTabbedPane)))
-            pBar->EnableGripper(FALSE);
-        else
-            pBar->EnableGripper(TRUE);
+        pBar->EnableGripper(FALSE); // no control bar caption
     }
     __super::OnAfterDock(pBar, lpRect, dockMethod);
+}
+
+BOOL CSamplePane::OnBeforeFloat(CRect& rectFloat, AFX_DOCK_METHOD dockMethod)
+{
+    UNREFERENCED_PARAMETER(rectFloat);
+    UNREFERENCED_PARAMETER(dockMethod);
+    return FALSE; // prevent floating
 }
 #pragma endregion
 

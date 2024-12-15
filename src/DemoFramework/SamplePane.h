@@ -45,11 +45,9 @@
         CDemoDocument* GetDemoDocument();
         CDemoFrame* GetDemoFrame();
     private:
-        virtual void ShowPane(BOOL bShow, BOOL bDelay, BOOL bActivate) override;
-        virtual BOOL FloatPane(CRect rectFloat,
-            AFX_DOCK_METHOD dockMethod = DM_UNKNOWN, bool bShow = true) override final;
         virtual void OnAfterDock(CBasePane* pBar,
             LPCRECT lpRect, AFX_DOCK_METHOD dockMethod) override final;
+        virtual BOOL OnBeforeFloat(CRect& rectFloat, AFX_DOCK_METHOD dockMethod) override;
         virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam) override final;
 
         // Message handlers
