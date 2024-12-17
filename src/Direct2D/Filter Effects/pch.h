@@ -14,7 +14,7 @@
 #include "Resource.h"
 
 // sample identifiers
-enum class SampleId
+enum class SampleId : UINT
 {
     gaussianBlur = 1,
     directionalBlur,

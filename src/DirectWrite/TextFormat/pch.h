@@ -17,7 +17,7 @@
 
 // project-wide enum definitions
 // sample identifiers
-enum class SampleId
+enum class SampleId : UINT
 {
     unknown = 0,
     font,

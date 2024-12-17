@@ -14,7 +14,7 @@
 #include "Resource.h"
 
 // sample identifiers
-enum class SampleId
+enum class SampleId : UINT
 {
     rangeFormat = 1,
     drawingEffects,
@@ -32,7 +32,7 @@ enum class UpdateHint : LPARAM
     typographyChanged
 };
 
-enum class BrushTypeId
+enum class BrushTypeId : UINT
 {
     unknown = 0,
     solid_color,

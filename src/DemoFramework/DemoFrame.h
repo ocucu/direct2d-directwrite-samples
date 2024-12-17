@@ -40,7 +40,6 @@ private:
     CMFCMenuBar m_wndMenuBar;
     CMenu m_menu;
     std::unique_ptr<CMenu> m_spSampleMenu;
-    //std::unordered_map<SampleId, std::shared_ptr<CSamplePane>> m_mapPanes;
     std::list<std::shared_ptr<CSamplePane>> m_listPanes;
 
     // Message handlers

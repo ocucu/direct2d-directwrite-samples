@@ -14,7 +14,7 @@
 #include "Resource.h"
 
 // sample identifiers
-enum class SampleId
+enum class SampleId : UINT
 {
     contrast = 1,
     brightness,
@@ -25,7 +25,7 @@ enum class SampleId
 };
 
 // image identifiers
-enum class BitmapId
+enum class BitmapId : UINT
 {
     cat = 1,
     pencil,

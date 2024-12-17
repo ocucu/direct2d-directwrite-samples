@@ -14,7 +14,7 @@
 #include "Resource.h"
 
 // sample identifiers
-enum class SampleId
+enum class SampleId : UINT
 {
     unknown = 0,
     solidColorBrush,
@@ -23,7 +23,7 @@ enum class SampleId
     radialGradientBrush,
 };
 
-enum class FigureId
+enum class FigureId : UINT
 {
     unknown = 0,
     none,
@@ -31,7 +31,7 @@ enum class FigureId
     ellipse,
 };
 
-enum class BitmapId
+enum class BitmapId : UINT
 {
     unknown = 0,
     colorMatrix,

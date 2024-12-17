@@ -17,10 +17,10 @@
 #endif
 
 // enum forward declarations (will be defined in application's header).
-enum class SampleId;                // sample/pane identifiers
-enum class FigureId;                // figure identifiers
-enum class BitmapId;                // bitmap identifiers
-enum class BrushTypeId;             // brush type identifiers
+enum class SampleId : UINT;         // sample/pane identifiers
+enum class FigureId : UINT;         // figure identifiers
+enum class BitmapId : UINT;         // bitmap identifiers
+enum class BrushTypeId : UINT;      // brush type identifiers
 enum class UpdateHint : LPARAM;     // view update hints
 
 // STL stuff

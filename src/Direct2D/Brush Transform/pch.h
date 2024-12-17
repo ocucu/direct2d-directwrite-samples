@@ -14,7 +14,7 @@
 #include "Resource.h"
 
 // sample identifiers
-enum class SampleId
+enum class SampleId : UINT
 {
     unknown = 0,
     translation,
@@ -23,7 +23,7 @@ enum class SampleId
     skew,
 };
 
-enum class BrushTypeId
+enum class BrushTypeId : UINT
 {
     unknown = 0,
     bitmap,
