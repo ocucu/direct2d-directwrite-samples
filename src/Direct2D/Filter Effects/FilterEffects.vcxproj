@@ -23,7 +23,7 @@
     <ProjectGuid>{2CC81D4C-942D-4A08-B697-DB8814AFBB1A}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
     <RootNamespace>FilterEffects</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <ProjectName>Filter Effects</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

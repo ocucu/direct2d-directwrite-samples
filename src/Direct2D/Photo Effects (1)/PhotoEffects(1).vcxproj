@@ -23,7 +23,7 @@
     <ProjectGuid>{E424F776-6461-42A9-95C0-C512786CE2E2}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
     <RootNamespace>PhotoEffects(1)</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <ProjectName>Photo Effects (1)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
