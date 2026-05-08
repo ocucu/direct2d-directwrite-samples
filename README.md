@@ -14,5 +14,5 @@
 
 ## Additional notes
 * You can find a short description for each demo project at [Codexpert Blog](https://codexpertro.wordpress.com/)
-* So far, the solution's projects are configured for 10.0.17763.0 Windows SDK version and Visual Studio 2017 (v141) platform toolset. However it's not a problem if you want to reconfigure to a newer Windows SDK version and/or a newer platform toolset if you have a newer Visual Studio version.  
+* So far, the solution's projects are configured for 10.0.19041.0 Windows SDK version and Visual Studio 2017 (v141) platform toolset. However it's not a problem if you want to reconfigure to a newer Windows SDK version and/or a newer platform toolset if you have a newer Visual Studio version.  
 * This repository is not intended to be an architecture and design "masterpiece". However it respects as much as possible the document-view MFC architecture and the KISS paradigm.
